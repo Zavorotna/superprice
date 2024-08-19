@@ -1,0 +1,156 @@
+.head-basket
+    h1
+        margin-bottom: 25rem
+        font-size: 24rem
+        font-weight: 600
+
+.bascket-card
+    position: relative
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 1fr
+    margin-bottom: 10rem
+    padding: 20rem
+    gap: 20rem
+    border: 1rem solid #D9D9D9
+    background: #FFF
+    box-shadow: 0rem 5rem 10rem 0rem rgba(18, 18, 18, 0.05)
+    +media(1024)
+        grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr
+.img-cart
+
+    img
+        width: 100%
+        object-fit: contain
+.basket-cta
+    display: block
+    width: 100%
+.basket-grid
+    grid-template-columns: 1fr
+    +media(1024)
+        grid-template-columns: 60vw 20vw
+        column-gap: 50rem
+.delete-cart-product
+    position: absolute
+    top: 0
+    right: 0
+    padding: 10rem
+    column-gap: 10rem
+    border: none
+    background-color: transparent
+    font-size: 14rem
+    font-weight: 300
+    svg
+        display: block
+        width: 10px
+        height: 10px
+        +media(1024)
+            width: 6px
+            height: 6px
+    span
+        display: none
+        +media(1024)
+            display: block
+
+.head-cart
+    padding-bottom: 20rem
+    font-size: 18rem
+    font-weight: 500
+    +media(1024)
+        padding-bottom: 34rem
+
+.text-cart
+    column-gap: 10rem
+    padding-bottom: 10rem
+    color: #9E9E9E
+    font-size: 16rem
+    font-weight: 400
+
+.color-cart
+    display: inline-block
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    // background-color: #000
+
+.count-cart
+    p
+        column-gap: 5rem
+    a
+        position: relative
+        width: 13px
+        height: 13px
+        transition: all .5s ease
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        &:hover
+            background-color: #D9D9D9
+    input
+        width: 100%
+        text-align: center
+        border: none
+        outline: none
+        width: 30rem
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button
+        -webkit-appearance: none
+        appearance: none
+        margin: 0
+    input[type='number'],
+    input[type="number"]::hover,
+    input[type="number"]:focus
+        appearance: textfield
+        -moz-appearance: textfield
+
+.price-cart-text
+    display: inline-block
+    padding-left: 10rem
+    color: #121212
+    font-size: 16rem
+    font-weight: 700
+    text-transform: uppercase
+.desctop-price
+    display: none
+    +media(1024) 
+        display: block
+.mobile-price
+    +media(1024)
+        display: none
+.form-basket
+    +media(1024)
+        max-width: 250rem !important
+    button, a
+        margin-bottom: 10rem
+        // min-height: 70rem
+    .cta-more
+        min-height: 70rem
+    
+.basket-readmore
+    margin-bottom: 10rem
+    padding: 15rem 10rem
+    font-size: 14rem
+    background-color: #fff
+    border: 1rem solid #D9D9D9
+    text-transform: none
+.basket-descr
+    position: relative
+    top: -15rem
+    input
+        width: 100%
+        border: 1rem solid #D9D9D9
+.sum-cart 
+    text-align: right
+    +media(1024)
+        text-align: left
+.sum-basket
+    padding: 16rem 0 30rem
+    .text-sum
+        text-transform: none
+        font-size: 18rem
+        font-weight: 500
+    .sum
+        font-size: 20rem
+        font-weight: 700

@@ -1,0 +1,338 @@
+.header-navigation
+    background-color: #fff
+    position: relative
+    background: rgba(255, 255, 255, 0.90)
+    backdrop-filter: blur(2.5px)
+    z-index: 10
+    +media(1024)
+        border-bottom: 1px solid #E31F25
+.sub-menu-main,
+.help-sub-menu,
+.basket-desctop
+    display: none
+.basket-desctop
+    +media(1024)
+        display: block
+.sub-menu-main
+    position: relative
+    background: #FFF
+    overflow-y: none
+    z-index: 50
+    +media(1024)
+        overflow-x: scroll
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.10)
+        border-radius: 0px 0px 15px 15px
+        border-right: 2px solid #ECECEC
+        border-bottom: 2px solid #ECECEC
+        border-left: 2px solid #ECECEC
+    &::-webkit-scrollbar
+        width: 100%
+        height: 5rem
+        background-color: #ccc
+    &::-webkit-scrollbar-thumb
+        background-color: #929090
+.mobile-head-menu
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    padding: 40px 18px 18px
+    background: #ECECEC
+    border-bottom: 5px solid #E31F25
+    +media(1024)
+        display: none
+    span
+        color: #E31F25
+        font-size: 16px
+        font-weight: 600
+        text-transform: uppercase
+    .cancel-menu
+        position: absolute
+        top: 48rem
+.navigation-menu-catalog
+    position: fixed
+    top: -62px
+    left: -100%
+    width: 80%
+    min-width: 50vw
+    height: 100vh
+    padding: 100rem 20rem 150rem
+    background-color: #fff
+    transition: all .5s ease
+    z-index: 30
+    box-sizing: content-box
+    +media(1024)
+        position: relative
+        top: 0
+        left: 0
+        padding: 0
+        width: 100%
+        display: flex
+        height: auto
+        overflow: none
+        justify-content: space-between
+        background-color: #fff
+        box-sizing: border-box
+    > li
+        border-bottom: 1px solid #D9D9D9
+        +media(1024)
+            border: none
+    .help-sub-menu
+        padding-bottom: 20px
+        a
+            padding: 7rem 7rem 7rem 40rem
+            font-weight: 500
+            text-transform: uppercase
+            color: #121212
+            +media(1024)
+                padding: 0 20px 15px
+
+    .sub-menu
+        a
+            span
+                font-size: 16rem
+                font-weight: 500
+                display: block
+                color: #121212
+    a
+        padding: 20px 0
+        display: inline-block
+        color: #121212
+        font-size: 16rem
+        font-weight: 500
+        letter-spacing: 0.8rem
+        text-transform: uppercase
+        +media(1024)
+            display: block
+            transition: all .5s ease
+.second-subMenu
+    display: none
+    +media(1024)
+        display: block
+    li
+        padding-bottom: 15rem
+    a
+        text-transform: none
+        font-weight: 400
+li.contact-mobile-menu
+    position: absolute
+    padding-top: 25px
+    border: none
+    p
+        column-gap: 10px
+        padding-bottom: 10px
+    a
+        padding: 0
+        font-size: 12px
+        font-weight: 400
+        text-transform: none
+    .head-mobile-menu
+        padding: 15px 0
+        font-size: 14px
+        font-weight: 600
+        text-transform: uppercase
+    +media(1024)
+        display: none
+.hover-help-menu
+    display: block
+    position: absolute
+    padding: 30rem
+    min-width: 300rem
+    top: 100%
+    left: 42%
+    transform: translateX(-50%)
+    background-color: #fff
+    z-index: 20
+    a
+        padding: 0
+        padding-bottom: 15rem
+        color: #121212
+        font-size: 14rem
+        font-weight: 500
+        transition: .25s
+        &:hover
+            font-weight: 600
+.help-svg
+    display: none
+    +media(1024)
+        display: block
+.hover-sub-menu
+    position: absolute
+    top: 103%
+    left: 0
+    column-gap: 37rem
+    padding: 31rem 0 54rem
+    min-width: 90vw
+    background-color: #fff
+    border-top: 10rem solid transparent
+    // overflow-x: auto
+    z-index: 20
+    +media(1024)
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        max-height: 60vh
+    &::-webkit-scrollbar
+        width: 5rem
+        background-color: #ccc
+    &::-webkit-scrollbar-thumb
+        background-color: #929090
+
+a.yellow-header-hover
+    color: #E31F25 !important
+    svg
+        top: 40%
+        transform: rotate(180deg)
+    svg > path
+        stroke: #E31F25
+
+a.header-hover-mobile
+    color: #E31F25 !important
+    svg
+        top: 40%
+        transform: rotate(180deg)
+    svg
+        path
+            stroke: #E31F25
+
+.black-fon-style,
+.black-fon-popup,
+.black-fon-mobile
+    position: fixed
+    top: 165rem
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.50)
+    z-index: 0
+
+.black-fon-mobile
+    top: 0
+    transition: all .5s ease
+    z-index: 10
+.down-menu
+    position: relative
+    text-transform: uppercase
+    svg
+        position: absolute
+        transition: all .5s ease
+        top: 50%
+        transform: translateY(-50%)
+        right: -58vw
+        +media(425)
+            right: -62vw
+        +media(520)
+            right: -67vw
+        +media(768)
+            right: -70vw
+        +media(1024)
+            right: -20rem
+        path
+            stroke: #121212
+    
+.sub-menu
+    position: relative
+    min-width: 295rem
+    padding-bottom: 20px
+    +media(1024)
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        max-height: 65vh
+        padding-bottom: 0
+    svg
+        path
+            fill: #121212
+    > li
+        transition: all .3s ease
+        padding: 0 20rem 20rem
+        +media(1024)
+            padding: 7rem 7rem 7rem 50rem
+    a
+        padding: 0
+        color: #121212
+        font-size: 16rem
+        span
+            display: inline-block
+            text-transform: lowercase
+
+.item
+    &:hover
+        > .default-menu
+            display: none
+
+.d-block
+    display: block !important
+
+.default-menu
+    width: 100%
+    position: absolute
+    top: 0
+    left: 100%
+    display: flex
+    justify-content: space-around
+    min-width: 60vw
+    p
+        padding: 8rem 0 18rem
+        color: #000
+        font-size: 16rem
+        font-weight: 500
+    ul
+        display: block
+        padding-left: 0
+        min-width: 170rem
+        li
+            a
+                padding: 0 0 15rem 0
+                font-size: 14rem
+                font-weight: 300
+                text-transform: none
+                transition: .25s
+                color: #121212
+                &:hover
+                    font-weight: 600
+
+li.contact-mobile-menu 
+    .mobile_contact
+        display: block
+        margin-bottom: 10px
+        a
+            display: flex
+            gap: 10px
+        span
+            font-size: 16px
+        +media(1024)
+            display: none
+
+.head-mobile-menu 
+    letter-spacing: 0.8px
+
+.icon-search_container
+    min-width: 18vw
+.search-desctop-block
+    display: none
+    width: 100%
+    min-width: 300rem
+    position: relative
+    +media(1024)
+        display: block
+        min-width: 100rem
+        max-width: 130rem
+    input
+        width: 100%
+        padding: 12px 0px 9px
+        outline: none
+        border: none
+        border-bottom: 1px solid #ECECEC
+
+.search-mobile-form
+    display: block
+    position: absolute
+    left: 0
+    bottom: -37px
+    input
+        padding: 10px 15px
+
+.padding-for-search
+    transition: all .25s ease
+    padding-bottom: 50px

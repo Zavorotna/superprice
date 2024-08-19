@@ -1,0 +1,81 @@
+.gray-bgc
+    padding: 40px 0
+    background: #ECECEC
+    > div
+        gap: 18px
+        flex-wrap: wrap
+
+.footer-nav
+    ul
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        +media(1024)
+            max-height: 100px
+.footer-head
+    padding-bottom: 18px
+    font-size: 18px
+    font-weight: 500
+    letter-spacing: 0.9px
+    text-transform: uppercase
+.contact,
+.footer-nav
+    a
+        display: inline-block
+        color: #121212
+        padding: 0 30px 15px 0
+        font-size: 16px
+        font-weight: 400
+        letter-spacing: 0.8px
+
+.contact
+    a
+        display: flex
+    div
+        display: block
+
+.privacyPolice
+    p
+        padding-top: 18px
+        +media(1024)
+            text-align: right
+        a
+            text-decoration-line: underline
+.footer-copy,
+.privacyPolice
+    a, span 
+        color: #121212
+        font-size: 14px
+        font-weight: 400
+
+.footer-copy
+    padding: 20px
+    justify-content: center
+        
+.mobile-fixed-footer
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    grid-template-columns: repeat(3, 1fr)
+    border-top: 1px solid #E37523
+    background: #E37523
+    z-index: 999
+    a
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        row-gap: 5px
+        padding: 11px
+        color: #fff
+        font-size: 10px
+        font-weight: 400
+        text-align: center
+        img
+            width: 17px
+            height: 17px
+    a + a
+        border-left: 1px solid #fff
+    +media(1024)
+        display: none

@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Mariupol';
+    src: url('../fonts/Mariupol-Medium.woff2') format('woff2'),
+        url('../fonts/Mariupol-Medium.woff') format('woff'),
+        url('../fonts/Mariupol-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mariupol';
+    src: url('../fonts/Mariupol-Bold.woff2') format('woff2'),
+        url('../fonts/Mariupol-Bold.woff') format('woff'),
+        url('../fonts/Mariupol-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mariupol';
+    src: url('../fonts/Mariupol-Regular.woff2') format('woff2'),
+        url('../fonts/Mariupol-Regular.woff') format('woff'),
+        url('../fonts/Mariupol-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mariupol Symbols';
+    src: url('../fonts/MariupolSymbols.woff2') format('woff2'),
+        url('../fonts/MariupolSymbols.woff') format('woff'),
+        url('../fonts/MariupolSymbols.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

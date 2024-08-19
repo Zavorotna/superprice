@@ -1,0 +1,393 @@
+@import components/mixins
+@import components/header
+@import components/header-menu
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    text-decoration: none
+    list-style: none
+html
+    font-size: 0.8px
+    scroll-behavior: smooth
+    +media(1024)
+        font-size: 0.9px
+    +media(1440)
+        font-size: 1px
+    +media(2200)
+        font-size: 2px
+
+body
+    color: #121212
+body, button
+    font-family: 'Mariupol'
+.wrapper
+    max-width: 90%
+    margin: 0 auto
+
+.d-none
+    display: none
+.d-block
+    display: block
+.d-flex
+    display: flex
+.grid
+    display: grid
+.flex-between
+    display: flex
+    justify-content: space-between
+
+.item-center
+    align-items: center
+
+.main_container
+    +media(1024)
+        min-height: 50vh
+    .main-block
+        opacity: 0
+        visibility: hidden
+    .main-block.activeFade
+        opacity: 1
+        visibility: visible
+    .main-text
+        max-width: 60vw
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: absolute
+        // padding: 150px 0
+        top: 50%
+        left: 0%
+        transform: translateY(-50%)
+        h1
+            font-size: 20px
+            max-width: 65vw
+            text-transform: uppercase
+            color: #E31F25
+            font-weight: 700
+            text-align: center
+            +media(1024)
+                max-width: 55vw
+                letter-spacing: 3.6px
+                font-size: 62rem
+            +media(1440)
+                font-size: 62rem
+        p
+            padding: 20rem 0
+            text-align: center
+            font-size: 12px
+            font-weight: 500
+            +media(1024)
+                font-size: 24rem
+                padding: 60rem 0
+        a
+            display: none
+            +media(1024)
+                display: block
+                width: 100%
+                max-width: 350rem
+                padding: 30rem 0
+                font-size: 18px
+                border-radius: 30px
+    .dots-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        column-gap: 15px
+        left: 20%
+        bottom: 15% !important
+        +media(1024)
+            left: 25%
+            bottom: 5% !important
+        .activeFade
+            width: 12px
+            height: 12px
+            position: relative
+            border: none
+            background-color: #E31F25
+            &::before
+                content: ""
+                position: absolute
+                top: 50%
+                left: 50%
+                width: 20px
+                height: 20px
+                border: 1px solid #999
+                border-radius: 50%
+                transform: translate(-50%, -50%)
+
+    .slider-dot
+        width: 12px
+        height: 12px
+        background-color: #999
+        border: 1px solid #fff
+        border-radius: 50%
+
+    .img-main
+        picture
+            display: inline-block
+            width: 100%
+            height: 100%
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+.cta
+    color: #FFF
+    text-align: center
+    font-weight: 400
+    text-transform: uppercase
+    background-color: #E37523
+
+.mobile-main-cta
+    display: block
+    width: 100%
+    font-size: 16px
+    padding: 17px 0
+    margin-bottom: 20px
+    border-radius: 10px
+    +media(1024)
+        display: none
+.descript-main_container
+    padding-bottom: 50px
+    +media(1024)
+        padding-bottom: 100px
+.decr-grid
+    gap: 10px
+    +media(1024)
+        position: relative
+        top: -10px
+        gap: 0
+        grid-template-columns: repeat(3, 1fr)
+        border-radius: 0px 0px 10px 10px
+        border-right: 1px solid #E0DEE1
+        border-bottom: 1px solid #E0DEE1
+        border-left: 1px solid #E0DEE1
+        > div + div
+            border-left: 1px solid #E0DEE1
+        > div
+            padding: 35rem
+    > div
+        border-radius: 10px
+        border: 1px solid #E0DEE1
+        padding: 15rem
+        justify-content: center
+        column-gap: 20px
+        +media(1024)
+            border-radius: 0
+            border: none
+    svg
+        width: 25px
+        height: 30px
+        +media(1024)
+            min-width: 60px
+            height: 70px
+
+.bold-info
+    min-width: 172px
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: 0.9px
+    text-transform: uppercase
+    +media(1024)
+        font-size: 18px
+
+.tiny-info
+    color: #999
+    font-size: 12px
+    font-weight: 400
+    +media(1024)
+        font-size: 18px
+.category-main
+    position: relative
+    padding-bottom: 100px
+    h2
+        padding-bottom: 50px
+        text-align: center
+        font-size: 48px
+        font-weight: 500
+        letter-spacing: 2.4px
+        text-transform: uppercase
+    .view-all
+        position: absolute
+        top: 10%
+        right: 0
+        a
+            color: #999
+            font-size: 18px
+            font-weight: 400
+            text-decoration-line: underline
+.category-slider
+    // width: 100%
+    gap: 30px
+    grid-template-columns: repeat(4, 1fr)
+
+.category-container
+    // max-width: 23vw
+    border-radius: 10px
+    overflow: hidden
+.categoty_grid
+    grid-template-columns: repeat(2, 1fr)
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+.header-category
+    padding: 13px 0
+    border-top: 2px solid #E31F25
+    border-bottom: 2px solid #E31F25
+    background: #ECECEC
+    font-size: 12px
+    text-align: center
+    font-weight: 500
+    letter-spacing: 0.9px
+    text-transform: uppercase
+    +media(768)
+        padding: 29px 0
+        font-size: 18px
+.slider-navigation
+    display: block !important
+    width: 30px
+    height: 30px
+.left,
+.right
+    display: none !important
+    position: absolute
+    width: 30px
+    height: 30px
+    top: 50%
+    left: -4%
+    background-color: #fff
+    border: 1px solid #E37523
+    border-radius: 7px
+    transform: translateY(-50%)
+    cursor: pointer
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 10px
+        height: 1.5px
+        background-color: #E37523
+    &::after
+        content: ""
+        position: absolute
+        width: 5px
+        height: 5px
+        top: 50.4%
+        left: 28%
+        border-top: 1.5px solid #E37523
+        border-right: 1.5px solid #E37523
+        transform: translateY(-50%) rotate(-135deg)
+    +media(1024)
+        display: block !important
+
+.right
+    left: 101%
+    &::after
+        top: 50%
+        left: 49%
+        transform: translateY(-50%) rotate(45deg)
+.change-container-main
+    padding-bottom: 100px
+.color
+    column-gap: 10rem
+    input[type="radio"]
+        position: relative
+        appearance: none
+        -webkit-appearance: none
+        width: 20rem
+        height: 20rem
+        border-radius: 50%
+        background-color: red
+        cursor: pointer
+        z-index: 4
+        &:checked
+            outline: 1px solid #999
+            border-radius: 50%
+
+.size
+    column-gap: 20px
+    input
+        position: absolute
+        appearance: none
+        width: 30rem
+        height: 20rem
+        cursor: pointer
+        z-index: 4
+    input + label
+        display: inline-block
+        font-size: 18rem
+        font-weight: 400
+        text-transform: uppercase
+        color: #121212
+        // &:hover
+        //     color: #214498
+    input:checked + label
+    input:disabled + label
+        color: #999
+
+.card
+    +media(1024)
+        max-width: 23vw
+.img-card
+    max-width: 360rem
+    border-radius: 5px
+    overflow: hidden
+    img
+        width: 100%
+        height: 100%
+        object-fit: contain
+.description_card_container
+    padding-left: 1px
+    h2
+        padding: 19px 0 10px
+        min-height: 50px
+        font-size: 20rem
+        font-weight: 500
+    .article
+        color: #999
+        font-size: 18px
+        font-weight: 400
+    button
+        width: 100%
+        padding: 14rem 0
+        color: #121212
+        font-size: 18rem
+        font-weight: 400
+        background-color: #fff
+        border-radius: 15px
+        border: 1px solid #E37523
+        letter-spacing: 0.9px
+        text-transform: uppercase
+        cursor: pointer
+.article,
+.color,
+.size,
+.price,
+.order-info_card
+    padding-bottom: 15rem
+
+.price
+    column-gap: 5px
+    flex-wrap: wrap
+    span:first-child
+        color: #121212
+        font-size: 20rem
+        font-weight: 500
+    span:last-child
+        color: #999
+        font-size: 18rem
+        font-weight: 400
+        text-decoration: line-through
+.order-info_card
+    color: #121212
+    font-size: 14rem
+    font-weight: 400
+
+@import components/basket
+@import components/footer

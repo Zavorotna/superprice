@@ -1,0 +1,46 @@
+.top-line-header
+    .wrapper.d-flex.header.item-center
+        .flex-between.burger-logo.item-center
+            .logo.flag-img
+                a(href="index.html")
+                    img(src="img/logo.svg", alt="logo")  
+        .icon-mobile.flex-between.item-center
+            .search-mobile 
+                a(href="#") 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.67279 0.9375C3.50528 0.9375 0.9375 3.50528 0.9375 6.67279C0.9375 9.84031 3.50528 12.4081 6.67279 12.4081C9.84031 12.4081 12.4081 9.84031 12.4081 6.67279C12.4081 3.50528 9.84031 0.9375 6.67279 0.9375ZM0 6.67279C0 2.98751 2.98751 0 6.67279 0C10.3581 0 13.3456 2.98751 13.3456 6.67279C13.3456 8.34673 12.7292 9.8767 11.711 11.0481L14.8627 14.1998C15.0458 14.3829 15.0458 14.6796 14.8627 14.8627C14.6796 15.0458 14.3829 15.0458 14.1998 14.8627L11.0481 11.711C9.8767 12.7292 8.34673 13.3456 6.67279 13.3456C2.98751 13.3456 0 10.3581 0 6.67279Z" fill="#121212"/>
+                    </svg>
+            p.cart-cta 
+                a(href="basket.html")
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
+                        <path d="M4.70763 6.52632V3.36842C4.70763 2.06038 5.73396 1 7 1C8.26604 1 9.29237 2.06038 9.29237 3.36842V6.52632M1.65115 12.8421H12.3489M2.52832 16H11.4717C12.3586 16 13.0592 15.2226 12.996 14.3086L12.4502 6.41382C12.3931 5.58755 11.7277 4.94737 10.9259 4.94737H3.07412C2.27235 4.94737 1.60689 5.58755 1.54976 6.41382L1.00396 14.3086C0.940773 15.2226 1.64142 16 2.52832 16Z" stroke="#121212" stroke-linecap="round"/>
+                    </svg>
+            p.cabinet-cta
+                a(href="#")
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <circle cx="8.50065" cy="4.16667" r="3.66667" stroke="#121212"/>
+                        <path d="M16 14.9999C16 11.318 12.6421 8.33325 8.5 8.33325C4.35786 8.33325 1 11.318 1 14.9999" stroke="#121212" stroke-linecap="round"/>
+                    </svg>
+        .adress-header 
+            a(href="#").d-flex.item-center
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 19C10.125 19 16 13.0996 16 8.94118C16 4.17647 12.366 1 8.5 1C4.63401 1 1 4.17647 1 8.52941C1 12.6878 6.875 19 8.5 19ZM8.5 11.0588C9.88071 11.0588 11 9.8737 11 8.41177C11 6.94983 9.88071 5.76471 8.5 5.76471C7.11929 5.76471 6 6.94983 6 8.41177C6 9.8737 7.11929 11.0588 8.5 11.0588Z" stroke="#E31F25"/>
+                </svg> 
+                span м.Хмельницький, Україна
+        .phone-header 
+            a(href="tel:+380").d-flex.item-center
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M19 17V15.3541C19 14.5363 18.5021 13.8008 17.7428 13.4971L15.7086 12.6835C14.7429 12.2971 13.6422 12.7156 13.177 13.646L13 14C13 14 10.5 13.5 8.5 11.5C6.5 9.5 6 7 6 7L6.35402 6.82299C7.28438 6.35781 7.70285 5.25714 7.31654 4.29136L6.50289 2.25722C6.19916 1.4979 5.46374 1 4.64593 1H3C1.89543 1 1 1.89543 1 3C1 11.8366 8.16344 19 17 19C18.1046 19 19 18.1046 19 17Z" stroke="#E31F25" stroke-linejoin="round"/>
+                </svg>
+                span +380 (67) 677 77 77
+        .social-header
+            include social
+        .entry-button 
+            form(action="#") 
+                button(type="submit") увійти
+        .burger#burger.burger-fix
+            span.bord
+        include registration
+include header-menu
+
+

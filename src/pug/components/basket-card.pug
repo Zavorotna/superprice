@@ -1,0 +1,42 @@
+.bascket-card.item-center
+    button.delete-cart-product.text-cart.d-flex.item-center
+        span видалити
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <path d="M6.99998 1.00002L1 7M0.999975 1L6.99995 6.99998" stroke="#121212" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    .img-cart 
+        picture 
+            img(src="img/catalog-card.png", alt="")
+    .description-cart 
+        p.head-cart Джинсові шорти
+        p.text-cart Артикул: 
+            span 83635337
+        p.text-cart.d-flex.item-center
+            span Колір: 
+            //- span чорний
+            span.color-cart(data-color="#ff3")
+        p.text-cart Розмір: 
+            span S
+        .price-cart.mobile-price
+            p.text-cart Ціна:
+                span.price-cart-text 800₴
+    .count-cart 
+        p.d-flex.text-cart.item-center 
+            span Кількість:
+            a.min(href="#") 
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="3" viewBox="0 0 8 3" fill="none">
+                    <path d="M0 2.036V0.964001H8V2.036H0Z" fill="black"/>
+                </svg>
+            input(type="number" min="1" value="1").number
+            a.max(href="#") 
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
+                    <path d="M2.912 7.004V-0.0039978H4.256V7.004H2.912ZM0 4.14V2.876H7.168V4.14H0Z" fill="black"/>
+                </svg>
+    .price-cart.desctop-price
+        p.text-cart Ціна:
+            span.price-cart-text 800₴
+    .sum-cart 
+        p.text-cart Сума:
+            span.price-cart-text 800₴
+
+        
