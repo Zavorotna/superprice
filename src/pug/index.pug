@@ -11,7 +11,7 @@ html(lang="uk")
                 include components/header
         main 
             include components/main-slider
-            .descript-main_container.wrapper 
+            .descript-main_container.wrapper.container
                 .grid.decr-grid 
                     .system-info.d-flex.item-center
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
@@ -57,10 +57,10 @@ html(lang="uk")
                         .info 
                             p.bold-info замовлення до 17:00
                             p.tiny-info відправляємо у цей день
-            section.category-main.wrapper
+            section.category-main.wrapper.container
                 h2 Категорії
-                .view-all
-                    a(href="#") показати усі 
+                    .view-all
+                        a(href="#") показати усі 
                 .category_container-slider.slider#categoryMain
                     .category-slider.grid.slider-container
                         .category-container 
@@ -123,8 +123,19 @@ html(lang="uk")
                                     img(src="img/shooe3.jpg", alt="")
                                 picture
                                     img(src="img/shoe4.jpg", alt="")
-            .change-container-main.wrapper
-                include components/card-slider
+            .change-container-main.wrapper.container
+                .button-block.d-flex.item-center
+                    a.toggle-section(data-target="hits") Хіти
+                    a.toggle-section(data-target="news") Новинки
+                    a.toggle-section(data-target="sale") Розпродаж
+                    .view-all
+                        a(href="#") показати усі 
+                .hits.active-main
+                    include components/card-slider
+                .news.d-none 
+                    include components/card-news
+                .sale.d-none
+                    include components/card-sale
 
             
         #footer

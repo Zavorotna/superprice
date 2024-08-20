@@ -1,0 +1,43 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        link(rel="stylesheet" href="css/style.css")
+        title SuperPrice - інтернет магазин необхідних товарів для всієї родини
+    body#body
+        header
+            .fixed-header
+                include components/header
+        main.wrapper
+            .d-flex.flex-arrow
+                a(href="#body").arrow-up.arrow
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
+                        <path d="M1 9L9 0.999999L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                a(href="#footer").arrow-down.arrow
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
+                        <path d="M1 0.999999L9 9L17 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            p.page-look.d-flex
+                a(href="index.html") головна
+                span /
+                a(href="#").selected-page каталог
+            .flex-between.catalog-main
+                include components/filter
+                include components/catalog-product-card
+            //- section.view-product 
+            //-     h2 переглянуті товари
+            //-     .wrapper-card
+            //-         .top-prodaz-card
+            //-             - for(let i = 0; i < 4; i++) 
+            //-                 include components/card-mini
+
+        footer#footer
+            #footer
+                include components/footer
+
+    script(src="js/scripts.js")

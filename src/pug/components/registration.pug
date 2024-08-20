@@ -9,12 +9,11 @@
             .d-flex.item-center.cta-reg
                 a(href="#").entry.active-link вхід
                 a(href="#").registration Реєстрація
-            hr.reg-hr
             .entry-form.active-form
                 form(action="#")
                     p 
                         label(for="emailEntry") E-mail
-                        input(type="email" name="emailEntry" id="emailEntry" placeholder="Ваш e-mail" required autocomplete="username")
+                        input(type="email" name="emailEntry" id="emailEntry" placeholder="E-mail" required autocomplete="username")
                     p 
                         label(for="passwordEntry") Пароль
                         input.password(type="password" id="passwordEntry" name="passwordEntry" placeholder="Ваш пароль" required autocomplete="current-password" minlength="6" maxlength="25")
@@ -25,7 +24,8 @@
                             </svg>
                             
                     a(href="#") Забули пароль?
-                    button(type="submit").yellow-cta.btn-card.contact-cta увійти 
+                    p.btn-block-reg
+                        button(type="submit").btn-reg  увійти 
             .registration-form 
                 form(action="#") 
                     p 
@@ -33,7 +33,7 @@
                         input(type="text" name="nameReg" placeholder="Ваше імʼя та прізвище" required maxlength="50")
                     p 
                         label(for="emailReg") E-mail
-                        input(type="email" name="emailReg" placeholder="Ваш e-mail" required autocomplete="username" maxlength="50")
+                        input(type="email" name="emailReg" placeholder="E-mail" required autocomplete="username" maxlength="50")
                     p 
                         label(for="passwordReg") Пароль
                             span (Пароль повинен бути не менше 6 символів)
@@ -54,4 +54,5 @@
                                 <path d="M8.14244 7.42857C8.93142 7.42857 9.57101 6.78898 9.57101 6C9.57101 5.21102 8.93142 4.57143 8.14244 4.57143C7.35346 4.57143 6.71387 5.21102 6.71387 6C6.71387 6.78898 7.35346 7.42857 8.14244 7.42857Z" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             
-                    button(type="submit").yellow-cta.btn-card.contact-cta зареєструватися 
+                    p.btn-block-reg 
+                        button(type="submit").btn-reg зареєструватися 

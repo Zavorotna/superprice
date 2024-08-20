@@ -1,0 +1,607 @@
+.filter
+    position: fixed
+    top: 0
+    left: -100%
+    width: 80%
+    height: 80vh
+    padding: 100rem 20rem 150rem
+    background-color: #fff
+    overflow-y: scroll
+    z-index: 9999
+    transition: all .5s ease
+    box-sizing: content-box
+    +media(1024)
+        padding: 0
+        position: static
+        min-width: 265rem
+        height: auto
+        overflow: auto
+        z-index: 0
+        box-sizing: border-box
+
+.mobile-head-menu
+    span
+        font-size: 24px
+    +media(1024)
+        display: none
+.filter-btn-mobile
+    a
+        color: #121212
+        font-size: 12px
+        font-weight: 500
+    +media(1024)
+        display: none
+.cancel-filter
+    position: absolute
+    right: 20px
+.catalog-main
+    width: 100%
+    .black-fon
+        +media(1024)
+            display: none
+    +media(1024)
+        column-gap: 60rem
+    +media(1440)
+        column-gap: 120rem
+.page-look
+    padding: 15px 0
+    column-gap: 5px
+    +media(1024)
+        padding: 22rem 0 35rem
+    a
+        min-width: 60px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    span, a
+        display: inline-block
+        color: #121212
+        font-size: 14px
+        font-weight: 400
+        transition: all .5s ease
+        &:hover
+            transform: scale(1.1)
+
+    .selected-page
+        font-weight: 500
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+
+.header-catalog-card
+    padding: 10rem 0 30rem
+.catalog-head
+    display: none
+    +media(1024)
+        display: block
+        margin: 0
+        font-size: 24rem
+        font-weight: 600
+
+.filter-header-block,
+.category-filter-catalog
+    padding: 29rem 0 21rem
+    h2
+        padding-bottom: 26rem
+        color: #E31F25
+        margin: 0
+        font-size: 18px
+        font-weight: 600
+        text-transform: uppercase
+.filter-header-block
+    h2
+        padding: 0
+    a
+        column-gap: 8rem
+        color: #121212
+        font-size: 14rem
+        font-weight: 300
+        opacity: 0.5
+//sort select
+.view-catalog-card
+    column-gap: 10px
+    +media(1024)
+        order: -1
+    p
+        font-size: 14px
+        font-weight: 500
+.sort-select
+    position: relative
+    z-index: 5
+    column-gap: 10rem
+    justify-content: flex-end
+    p
+        font-size: 12px
+        font-weight: 500
+        +media(1024)
+            font-size: 14px
+.select
+    position: relative
+    // border: 1rem solid #1E1E1E
+    background: #FFF
+    z-index: 7
+    +media(1024)
+        width: 150rem
+        height: 30rem
+.icon-select
+    +media(1024)
+        display: none
+.select-count
+    .select
+        width: 40px
+.is-opened
+    .select__in
+        &:after
+            transform: translateY(0%) rotate(45deg)
+    .select__list
+        visibility: visible
+        max-height: none
+        opacity: 1
+        z-index: 5
+    .select__item
+        transition: all .5s ease
+        display: block
+        &:hover
+            font-weight: 500
+
+.is-active,
+.text-select
+    display: none
+.text-select
+    +media(1024)
+        display: block
+.select-count
+    .select__in
+        position: absolute
+        padding-left: 0rem
+        top: 50%
+        color: #121212
+        left: 50%
+        width: 100%
+        font-size: 14rem
+        font-weight: 500
+        user-select: none
+        transform: translate(-50%, -50%)
+        cursor: pointer
+        &::after
+            transition: all 1s ease
+            font-weight: 500
+            content: ""
+            position: absolute
+            top: 25%
+            right: 15rem
+            width: 8rem
+            height: 8rem
+            display: block
+            border-top: 1rem solid #1E1E1E
+            border-left: 1rem solid #1E1E1E
+            transform: translateY(-25%) rotate(225deg)
+    .select__list
+        left: -100px
+        +media(1024)
+            left: -0rem
+            min-width: 50rem
+.popularity-select
+    position: relative
+    width: 15px
+    height: 15px
+    +media(1024)
+        order: -1
+        width: auto
+        height: auto
+    svg
+        position: absolute
+        top: -8rem
+        left: -16px
+    .select__in
+        +media(1024)
+            position: absolute
+            padding-left: 0rem
+            top: 50%
+            color: #121212
+            left: 50%
+            width: 100%
+            font-size: 14rem
+            font-weight: 500
+            user-select: none
+            transform: translate(-50%, -50%)
+            cursor: pointer
+            &::after
+                transition: all 1s ease
+                font-weight: 500
+                content: ""
+                position: absolute
+                top: 25%
+                right: 15rem
+                width: 8rem
+                height: 8rem
+                display: block
+                border-top: 1rem solid #1E1E1E
+                border-left: 1rem solid #1E1E1E
+                transform: translateY(-25%) rotate(225deg)
+.select__list
+    display: block
+    overflow: hidden
+    width: 150rem
+    top: 20px
+    left: -150rem
+    border-bottom: 1rem solid #C4C4C4
+    border-left: 1rem solid #C4C4C4
+    border-right: 1rem solid #C4C4C4
+    border-radius: 0 0 10px 10px
+    background: #FFF
+    position: absolute
+    transition: opacity .2s ease .1s
+    visibility: hidden
+    max-height: 0
+    opacity: 0
+    +media(768)
+        width: 100.5%
+        top: 100%
+        left: -.5rem
+    +media(1024)
+        left: -100rem
+        min-width: 250rem
+
+.select__item
+    display: none
+    padding: 10rem
+    font-size: 14rem
+    color: #1E1E1E
+    background: #FFF
+    transition: all .3s ease
+    cursor: pointer
+
+.catalog-container
+    gap: 10rem
+    width: 100%
+    min-width: 65vw
+    padding-bottom: 50rem
+    +media(1024)
+        gap: 20rem
+
+.grid-catalog
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    +media(768)
+        grid-template-columns: repeat(4, 1fr)
+    +media(1024)
+        grid-template-columns: repeat(2, 1fr)
+    +media(1150)
+        grid-template-columns: repeat(3, 1fr)
+.grig-card-line
+    display: grid
+    grid-template-rows: 1fr
+    gap: 10px
+    +media(768)
+        grid-template-columns: 1.5fr 1fr
+    +media(1024)
+        grid-template-columns: repeat(2, 1fr)
+.line-catalog
+    grid-template-columns: 1fr
+    .card
+        padding: 10rem 0
+        border-bottom: 1px solid #D9D9D9
+        +media(1024)
+            max-width: none
+            padding: 20rem 0
+.flag-line
+    top: 35rem
+.active-btn-card
+    svg
+        rect
+            stroke: #E31F25
+.active-btn-card-line
+    svg
+        rect
+            fill: #E31F25
+.main-info-card
+    // grid-template-columns: repeat(3, 1fr)
+    column-gap: 30rem
+.btn-view-block
+    +media(1024)
+        min-width: 300rem
+// .card-view-block
+//     flex-wrap: wrap
+//     column-gap: 20px
+//     +media(768)
+//         flex-wrap: nowrap
+//     +media(1150)
+//         column-gap: 80px
+.picture-line
+    +media(1024)
+        min-width: 200px
+        max-width: 300px
+    img
+        min-height: 150px
+        object-fit: cover
+        +media(768)
+            object-fit: contain
+.open-more
+    display: inline-block
+    padding-top: 19rem
+    color: #C4C4C4
+    font-size: 14px
+    font-weight: 400
+    text-decoration-line: underline
+.slider-range
+    position: relative
+    width: 100%
+    background-color: #C4C4C4
+    height: 1px
+    margin: 6rem 0 50rem
+
+.range
+    position: absolute
+    height: 100%
+    background: #C4C4C4
+    box-sizing: border-box
+
+.handle
+    position: absolute
+    width: 15rem
+    height: 15rem
+    background: #E37523
+    border: 1rem solid #C4C4C4
+    cursor: pointer
+    border-radius: 50%
+    top: 50%
+    z-index: 2
+    transform: translateY(-50%)
+
+#min-handle
+    left: 0
+
+#max-handle
+    right: 0
+
+.values
+    position: relative
+    top: 20rem
+    display: flex
+    justify-content: space-between
+    font-size: 16rem
+    span
+        font-size: 12px
+        font-weight: 500
+#min-value,
+#max-value
+    width: 70rem
+    height: 20rem
+    background: #FFF
+#min-value
+    text-align-last: left
+#max-value
+    text-align: right
+.padding-range
+    padding: 20rem
+
+.description-blog
+    box-sizing: border-box
+    margin: 0 0 10rem 0
+    width: 100%
+    // +media(640)
+    //     max-width: 300rem
+
+.readmore
+    position: relative
+    display: block
+    padding: 10rem 9rem
+    color: #121212
+    font-size: 18rem
+    font-weight: 500
+    border-radius: 10px
+    border: 1px solid #C4C4C4
+    letter-spacing: 0.9rem
+    text-transform: uppercase
+    &::after
+        transition: all 1s ease
+        font-weight: 500
+        content: ""
+        position: absolute
+        top: 50%
+        right: 10rem
+        width: 10rem
+        height: 10rem
+        display: block
+        border-top: 1rem solid #1E1E1E
+        border-left: 1rem solid #1E1E1E
+        transform: translateY(-70%) rotate(225deg)
+.readmore-arrow
+    &::after
+        transition: all 1s ease
+        font-weight: 500
+        content: ""
+        position: absolute
+        top: 50%
+        right: 10rem
+        width: 10rem
+        height: 10rem
+        display: block
+        border-top: 1rem solid #1E1E1E
+        border-left: 1rem solid #1E1E1E
+        transform: translateY(-50%) rotate(225deg)
+        position: relative
+.readmore-active,
+.readmore-active-menu,
+.readmor-menu-main
+    &::after
+        transform: translateY(-50%) rotate(45deg)
+.readmore-active
+    border-radius: 10px 10px 0 0
+    border-bottom: none
+.description-select
+    width: 100%
+.filter-select
+    .visible
+        padding: 0 20rem 20rem 20rem
+.clothes-select,
+.filter-select
+    .readmore
+        padding: 17rem 20rem
+
+.description-more
+    color: #1E1E1E
+    font-size: 14rem
+    font-weight: 400
+    max-height: 0
+    overflow: hidden
+    p
+        padding-bottom: 10px
+        column-gap: 10rem
+.checkbox-catalog,
+.order-checkbox
+    input
+        padding: 0
+        padding-left: 10px
+        appearance: none
+        width: 14px
+        height: 14px
+        border-radius: 2px !important
+        border: 1px solid #C4C4C4
+        background: #FFF
+        cursor: pointer
+        border-radius: 0
+        cursor: pointer
+    label
+        font-size: 14px
+    input:checked
+        border: 1px solid #214498
+        background: #214498
+        border-radius: 0
+    input:checked + label
+        text-shadow: 0 0 1px
+.description-menu
+    max-height: 0
+    overflow: hidden
+    a, span
+        color: #000
+        font-size: 16rem
+        font-weight: 500
+
+.visible-menu
+    padding: 0 0 37rem 50rem
+    a
+        display: block
+        padding-bottom: 15rem
+        color: #121212
+        font-size: 18rem
+        font-weight: 300
+.readmore-menu-main
+    display: block
+    color: #121212
+    font-size: 16rem
+    font-weight: 500
+    letter-spacing: 0.8rem
+    text-transform: uppercase
+    transition: all .5s ease
+    svg
+        path
+            // fill: #fff
+            +media(1024)
+                fill: #121212
+    &:hover
+        padding: 15rem
+        background: #D9D9D9
+        color: #E31F25
+        svg
+            path
+                fill: #E31F25
+.readmore-menu
+    background: #fff
+
+.readmore-menu-main
+    padding: 15rem 0
+    span
+        padding-left: 10rem
+
+.category-nav_catalog
+    > ul
+        > li
+            > a
+                color: #121212
+                font-size: 18px
+                font-weight: 500
+
+.readmore-menu,
+.readmore-active-menu
+    padding-bottom: 20px
+
+.readmore-active-menu-main
+    padding: 15rem
+    background: #D9D9D9
+    color: #214498
+.visible
+    border-radius: 0 0 10px 10px
+    border-left: 1px solid #C4C4C4
+    border-right: 1px solid #C4C4C4
+    border-bottom: 1px solid #C4C4C4
+.visible,
+.visible-menu
+    max-height: 3000rem
+    transition: max-height 1s ease
+.visible-menu
+    overflow: auto
+    &::-webkit-scrollbar
+        width: 5rem
+        background-color: #ccc
+    &::-webkit-scrollbar-thumb
+        background-color: #929090
+.visible::not(::firs-child)
+    padding: 20rem
+
+.cta-more
+    width: 100%
+    max-width: 365rem
+    border-radius: 20px
+    background: #ECECEC
+    a
+        display: block
+        color: #121212
+        padding: 21px 0
+        text-align: center
+        font-size: 18px
+        font-weight: 400
+        letter-spacing: 0.9px
+        text-transform: uppercase
+        &:hover
+            color: #fff
+            background-color: #214498
+
+.pagination
+    padding: 26rem 0
+    justify-content: center
+
+.pagination-button
+    color: #000
+    font-size: 18rem
+    padding: 0 4rem
+    min-width: 15rem
+    font-style: normal
+    font-weight: 400
+    letter-spacing: 9rem
+    transition: all .3s ease
+    text-transform: uppercase
+    span
+        text-align: center
+    svg
+        transition: all .3s ease
+    &:hover
+        font-weight: 700
+        > svg
+            transform: scale(1.1)
+
+.current-page
+    font-weight: 700
+
+.cta-prev
+    padding-right: 30rem
+    padding-left: 10rem
+.cta-next
+    padding-right: 10rem
+    padding-left: 30rem
+
+.view-product
+    padding: 69rem 0 100rem
+    +media(1024)
+        padding: 69rem 0 50rem

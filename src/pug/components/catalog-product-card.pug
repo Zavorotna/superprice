@@ -1,0 +1,67 @@
+section.catalog-card
+    .flex-between.item-center.header-catalog-card
+        //- h1.catalog-head жіночий одяг
+        .filter-btn-mobile 
+            a(href="#")
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                    <circle cx="1.66667" cy="1.66667" r="1.16667" stroke="#E31F25"/>
+                    <circle cx="1.66667" cy="8.33329" r="1.16667" stroke="#E31F25"/>
+                    <circle cx="1.66667" cy="1.66667" r="1.16667" transform="matrix(-1 0 0 1 10.5557 3.33337)" stroke="#E31F25"/>
+                    <path d="M2.77783 1.66663H10.5556" stroke="#E31F25"/>
+                    <path d="M2.77783 8.33337H10.5556" stroke="#E31F25"/>
+                    <path d="M7.77783 5H5.42402e-05" stroke="#E31F25"/>
+                </svg>
+                span фільтр
+        .sort-select.item-center.d-flex.select-count
+            p кількість товарів:
+            form(action="#" method="post")#countForm
+                label.arrow-select
+                    .select
+                        input(type='hidden').select__input
+                        .select__in 16
+                        .select__list
+                            .select__item(data-value='1') 16
+                            .select__item(data-value='2') 24
+                            .select__item(data-value='3') 36
+                            .select__item(data-value='4') 48
+        .view-catalog-card.d-flex.item-center
+            p.text-select вигляд:
+            p.box
+                a(href="#").active-btn-card 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <rect x="0.5" y="0.5" width="3" height="3" stroke="#D9D9D9"/>
+                        <rect x="6.5" y="0.5" width="3" height="3" stroke="#D9D9D9"/>
+                        <rect x="0.5" y="6.5" width="3" height="3" stroke="#D9D9D9"/>
+                        <rect x="6.5" y="6.5" width="3" height="3" stroke="#D9D9D9"/>
+                    </svg>
+            p.line
+                a(href="#")
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
+                        <rect width="12" height="1" fill="#D9D9D9"/>
+                        <rect y="4" width="12" height="1" fill="#D9D9D9"/>
+                        <rect y="8" width="12" height="1" fill="#D9D9D9"/>
+                    </svg> 
+
+        .sort-select.item-center.d-flex.popularity-select
+            p.text-select сортувати:
+            form(action="#" method="post")#sortForm
+                label.arrow-select
+                    .select
+                        input(type='hidden').select__input
+                        .select__in 
+                            span.text-select найпопулярніші
+                            span.icon-select 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+                                    <path d="M4.35355 0.646447C4.15829 0.451184 3.84171 0.451184 3.64645 0.646447L0.464466 3.82843C0.269204 4.02369 0.269204 4.34027 0.464466 4.53553C0.659728 4.7308 0.976311 4.7308 1.17157 4.53553L4 1.70711L6.82843 4.53553C7.02369 4.7308 7.34027 4.7308 7.53553 4.53553C7.7308 4.34027 7.7308 4.02369 7.53553 3.82843L4.35355 0.646447ZM4.5 11V1H3.5V11H4.5Z" fill="#E31F25"/>
+                                    <path d="M10.6464 11.3536C10.8417 11.5488 11.1583 11.5488 11.3536 11.3536L14.5355 8.17157C14.7308 7.97631 14.7308 7.65973 14.5355 7.46447C14.3403 7.2692 14.0237 7.2692 13.8284 7.46447L11 10.2929L8.17157 7.46447C7.97631 7.2692 7.65973 7.2692 7.46447 7.46447C7.2692 7.65973 7.2692 7.97631 7.46447 8.17157L10.6464 11.3536ZM10.5 1V11H11.5V1H10.5Z" fill="#E31F25"/>
+                                </svg>
+                        .select__list
+                            .select__item(data-value='2') ціна за спаданням
+                            .select__item(data-value='3') ціна за зростанням
+                            .select__item(data-value='4') за новизною
+                            .select__item(data-value='5') за популярністю
+    .container
+        .catalog-container.grid-catalog
+            - for(let i = 0; i < 20; i++) 
+                include card-mini
+        include pagination
