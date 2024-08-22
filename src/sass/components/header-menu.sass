@@ -1,11 +1,13 @@
 .header-navigation
     background-color: #fff
     position: relative
-    background: rgba(255, 255, 255, 0.90)
+    // background: rgba(255, 255, 255, 0.90)
     backdrop-filter: blur(2.5px)
     z-index: 10
     +media(1024)
         border-bottom: 1px solid #E31F25
+    > nav
+        column-gap: 100rem
 .sub-menu-main,
 .help-sub-menu,
 .basket-desctop
@@ -49,30 +51,34 @@
     .cancel-menu
         position: absolute
         top: 48rem
-.navigation-menu-catalog
+
+.nav_container
     position: fixed
     top: -62px
     left: -100%
     width: 80%
     min-width: 50vw
     height: 100vh
-    padding: 100rem 20rem 150rem
-    background-color: #fff
     transition: all .5s ease
     z-index: 30
-    box-sizing: content-box
+    background-color: #fff
     +media(1024)
         position: relative
         top: 0
         left: 0
         padding: 0
         width: 100%
-        display: flex
         height: auto
         overflow: none
-        justify-content: space-between
         background-color: #fff
         box-sizing: border-box
+
+.navigation-menu-catalog
+    padding: 100px 20rem 
+    +media(1024)
+        padding: 0
+        display: flex
+        column-gap: 70rem
     > li
         border-bottom: 1px solid #D9D9D9
         +media(1024)
@@ -84,6 +90,13 @@
             font-weight: 500
             text-transform: uppercase
             color: #121212
+            svg
+                path 
+                    transition: all .5s ease
+                    fill: #121212
+            &:hover
+                > svg path
+                    fill: #E37523
             +media(1024)
                 padding: 0 20px 15px
 
@@ -134,16 +147,28 @@ li.contact-mobile-menu
     +media(1024)
         display: none
 .hover-help-menu
-    display: block
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
     position: absolute
+    align-items: center
+    gap: 20rem
     padding: 30rem
-    min-width: 300rem
+    min-width: 90vw
     top: 100%
-    left: 42%
-    transform: translateX(-50%)
+    left: 0%
+    // transform: translateX(-50%)
     background-color: #fff
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10)
+    border-radius: 0px 0px 15px 15px
+    border: 1px solid #ECECEC
     z-index: 20
+    span
+        display: block
+        padding-top: 20px
+        min-height: 60px
+        transition: all .5s ease
     a
+        text-align: center
         padding: 0
         padding-bottom: 15rem
         color: #121212
@@ -151,14 +176,15 @@ li.contact-mobile-menu
         font-weight: 500
         transition: .25s
         &:hover
-            font-weight: 600
+            span 
+                color: #E37523
 .help-svg
     display: none
     +media(1024)
         display: block
 .hover-sub-menu
     position: absolute
-    top: 103%
+    top: 102%
     left: 0
     column-gap: 37rem
     padding: 31rem 0 54rem
@@ -194,22 +220,21 @@ a.header-hover-mobile
     svg
         path
             stroke: #E31F25
-
 .black-fon-style,
 .black-fon-popup,
 .black-fon-mobile
     position: fixed
-    top: 0
+    top: 165rem
     left: 0
     width: 100%
-    height: 100vh
+    height: 100%
     background: rgba(0, 0, 0, 0.50)
-    z-index: 0
-
+    z-index: 1
+    
 .black-fon-mobile
     top: 0
     transition: all .5s ease
-    z-index: 10
+    z-index: 30
 .down-menu
     position: relative
     text-transform: uppercase
@@ -218,13 +243,9 @@ a.header-hover-mobile
         transition: all .5s ease
         top: 50%
         transform: translateY(-50%)
-        right: -58vw
-        +media(425)
-            right: -62vw
+        right: -50vw
         +media(520)
             right: -67vw
-        +media(768)
-            right: -70vw
         +media(1024)
             right: -20rem
         path
@@ -248,6 +269,14 @@ a.header-hover-mobile
         padding: 0 20rem 20rem
         +media(1024)
             padding: 7rem 7rem 7rem 50rem
+        > a
+            color: #121212
+            > span
+                +media(1024)
+                    display: inline-block
+                    font-size: 18rem
+                    padding-bottom: 18px
+                    text-transform: none
     a
         padding: 0
         color: #121212

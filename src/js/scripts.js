@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.addEventListener("mouseleave", function () {
                     const link = this.querySelector("a"),
                         subMenu = this.querySelector(".sub-menu-main") || this.querySelector(".help-sub-menu")
-
+                    
                     if (link) removeHoverClass(link, "yellow-header-hover")
                     if (subMenu) removeHoverClass(subMenu, subMenu.classList.contains("sub-menu-main") ? "hover-sub-menu" : "hover-help-menu")
                 })
@@ -56,12 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     blackFon.classList.remove("black-fon-style")
                     blackFon.style.display = 'none'
                 }
-                if (window.innerWidth < 1024) {
-                    item.addEventListener('mouseenter', showMenu)
-                    item.addEventListener('mouseleave', hideMenu)
-                    subMenu.addEventListener('mouseenter', showMenu)
-                    subMenu.addEventListener('mouseleave', hideMenu)
-                }
+
+                item.addEventListener('mouseenter', showMenu)
+                item.addEventListener('mouseleave', hideMenu)
+                subMenu.addEventListener('mouseenter', showMenu)
+                subMenu.addEventListener('mouseleave', hideMenu)
             })
         }
         if (window.innerWidth < 1024) {
@@ -81,10 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (document.querySelector("#burger")) {
             const burger = document.querySelector(".burger"),
-                mobileMenu = document.querySelector(".navigation-menu-catalog"),
+                mobileMenu = document.querySelector(".nav_container"),
                 sections = document.querySelectorAll(".scrollBurger"),
                 cancelMenu = document.querySelector(".cancel-menu"),
-                headList = document.querySelectorAll(".head-subMenu")
+                headList = document.querySelectorAll(".head-subMenu"),
+                body = document.querySelector("body")
 
             let isMenuOpen = false
             headList.forEach(item => {
@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             burger.addEventListener('click', function () {
                 burger.classList.add('active')
                 mobileMenu.style.overflowY = "scroll"
+                body.style.overflow = "hidden"
                 mobileMenu.style.left = "0"
                 mobileMenu.style.top = "-62px"
                 blackFon.classList.add("black-fon-mobile")
@@ -122,15 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (window.innerWidth < 1024) {
                 blackFon.addEventListener("click", function () {
                     closeMenu()
-
+                    
                 })
             }
-
+            
             function closeMenu() {
                 burger.classList.remove('active')
                 burger.classList.add("noactive")
                 mobileMenu.style.left = "-100%"
                 mobileMenu.style.top = "-62px"
+                body.style.overflow = "none"
                 mobileMenu.style.overflowY = ""
                 burger.style.left = "0"
                 blackFon.classList.remove("black-fon-mobile")
