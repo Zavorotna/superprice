@@ -792,33 +792,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-    // const products = document.querySelectorAll(".products")
-    // let sliders = {}
-    // // console.log(products);
-    // products.forEach((slider, i) => {
-    //     const mediaQuery1440 = window.matchMedia('(min-width: 1440px)');
-    //     const mediaQuery1920 = window.matchMedia('(min-width: 1920px)');
 
-    //     let baseCardWidthImg = "250px"
-
-    //     if (mediaQuery1440.matches) {
-    //         baseCardWidthImg = "250px";
-    //     }
-
-    //     if (mediaQuery1920.matches) {
-    //         baseCardWidthImg = "550px";
-    //     }
-    //     sliders["img-key" + (i + 1)] = new InfinitySlider("#product" + (i + 1), {
-    //         isArrows: true,
-    //         isSlidesToScrollAll: false,
-    //         baseCardWidth: baseCardWidthImg,
-    //         gap: 50,
-    //         isAutoplay: true,
-    //         autoplaySpeed: 10000,
-    //         transitionCard: "all .5s ease-in-out",
-    //     })
-    // })
-    let baseCardSliderWidth
+    let baseCardSliderWidth,
+        sliderInterval
     if (window.innerWidth > 1024) {
         baseCardSliderWidth = window.innerWidth / 5
         console.log(baseCardSliderWidth);
@@ -870,6 +846,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             mainSlider.init()
         }
+        clearInterval(sliderInterval)
         sliderInterval = setInterval(() => {
             categorySlider.init()
             Object.keys(sliderGalery).forEach(sliderKeyG => {
@@ -891,9 +868,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
         window.onresize = function () {}
+        clearInterval(sliderInterval)
         sliderInterval = setInterval(() => {
             cardSlider.init()
-        }, 100);
+        }, 1000);
     }
 
 

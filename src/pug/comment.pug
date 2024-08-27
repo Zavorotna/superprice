@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        link(rel="stylesheet" href="css/style.css")
+    body#body
+        header
+            .fixed-header
+                include components/header
+        main.wrapper
+            p.page-look.d-flex
+                a(href="index.html") головна
+                span /
+                span.selected-page відгуки
+            h1 відгуки
+            .rewiev-container.grid 
+                .revies 
+                    - for(let i = 0; i < 3; i++)
+                        include components/comment-card
+                .rewiev-form 
+                    form(action="#")
+                        .form-comment 
+                            h2.head-comment-form Залишити відгук
+                            p.form-to-add_comment
+                                p
+                                    p 
+                                        label(for="name") Імʼя та прізвище*
+                                    p 
+                                        input#name(type="text" name="name" required placeholder="Імʼя та прізвище")
+                                p
+                                    p 
+                                        label(for="mail") E-mail*
+                                    p
+                                        input#mail(type="email" name="mail" required placeholder="E-mail") 
+                                p
+                                    p 
+                                        label(for="comment") Відгук
+                                    p 
+                                        textarea#comment(name="comment" placeholder="Написати відгук")
+                                button(type="submit").btn-card.yellow-cta надіслати
+
+        footer 
+            include components/footer
