@@ -1,0 +1,358 @@
+.card-main,
+.img-block
+    +media(1024)
+        display: grid
+        column-gap: 20rem
+        grid-template-columns: 1fr 1fr
+    h1
+        padding-bottom: 15rem
+        font-size: 18px
+        font-weight: 500
+        +media(1024)
+            font-size: 36rem
+            padding-bottom: 60rem
+    h3
+        font-size: 18rem
+        font-weight: 500
+    .price-block
+        gap: 10rem
+        padding-bottom: 20rem
+    .price
+        padding: 0
+        font-size: 24rem
+        font-weight: 700
+    .price-descr
+        padding-bottom: 15rem
+        color: #121212
+        font-size: 18px
+        font-weight: 500
+    .old-price
+        color: #999
+        font-size: 18rem
+        font-weight: 400
+        text-decoration: line-through
+    .article
+        padding-bottom: 20rem
+        font-size: 18rem
+        font-weight: 400
+        +media(1024)
+            padding-bottom: 60rem
+.size-block,
+.color-block,
+.count
+    column-gap: 20rem
+    padding-bottom: 20rem
+    p
+        padding: 0
+        column-gap: 20rem
+
+.count-container
+    column-gap: 10rem
+.minus,
+.plus
+    color: #999
+    font-size: 18rem
+.number
+    font-size: 14rem
+.minus,
+.number,
+.plus
+    position: relative
+    display: inline-block
+    width: 30px
+    height: 30px
+    border: 1px solid #E37523
+    font-weight: 400
+    border-radius: 8px
+    span
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+.img-block-mobile
+    display: block
+    +media(1024)
+        display: none
+.img-slider
+    position: relative
+    width: 100%
+    min-height: 65vh
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+.mobile-slider
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    transition: opacity .25s ease
+    &.active
+        opacity: 1
+.btn-slider
+    padding: 10rem 0 20rem
+    display: flex
+    justify-content: center
+    column-gap: 10px
+    input
+        display: none
+    input + label 
+        position: relative
+    input + label
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background-color: #999
+    input:checked 
+        + label
+            width: 12px
+            height: 12px
+            background-color: #E31F25
+            border-radius: 50%
+            &::before
+                position: absolute
+                content: ""
+                top: 50%
+                left: 50%
+                width: 17px
+                height: 17px
+                border-radius: 50%
+                border: 1px solid #999
+                transform: translate(-50%, -50%)
+
+    // input
+    //     position: relative
+    //     appearance: none
+    //     width: 15px
+    //     height: 15px
+    //     border-radius: 50%
+    //     background-color: #999
+    //     // border: 1px solid #999
+    //     &:checked
+    //         outline: 1px solid #999
+    //         border: 3px solid #fff
+    //         background-color: #E31F25
+    //         border-radius: 50%
+.img-block
+    max-height: 55vw
+    +media(1024)
+        height: auto
+
+.img-block
+    display: none
+    position: relative
+    grid-column-gap: 20rem
+    margin-bottom: 30rem
+    width: 100%
+    height: 100%
+    overflow: hidden
+    +media(1024)
+        display: grid
+        grid-template-columns: 150px 4fr
+    +media(1440)
+        grid-template-columns: 200px 4fr
+
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.small-img
+    position: relative
+    top: -20px
+    display: grid
+    row-gap: 8px
+    grid-template-rows: 1fr
+.main-img
+    border-radius: 10px
+    overflow: hidden
+.carousel-card
+    display: grid
+    row-gap: 10px
+    grid-template-rows: 1fr 1fr
+    transition: all .5s ease
+
+.small-img-parent
+    width: 100%
+    border-radius: 10px
+    overflow: hidden
+    +media(1024)
+        height: 200px
+    img
+        object-fit: cover
+
+.btn
+    display: none
+    width: 100%
+    position: absolute
+    transition: all .5s ease
+    z-index: 3
+    svg
+        border-radius: 7px
+        border: 1px solid #E37523
+        path
+            transform: translateX(-25%)
+            +media(1440)
+                transform: translateX(-5%)
+    &::before
+        content: ""
+        position: absolute
+        top: -25px
+        left: -1px
+        width: 103%
+        z-index: -1
+        border-bottom: 60px solid #fff
+.btn-prev
+    bottom: 0
+    &::before
+        top: -25px
+
+.btn-next
+    position: absolute
+    top: 0
+    &::before
+        bottom: -25px
+.btn-block
+    padding-top: 10px
+    gap: 10px
+    flex-wrap: wrap
+    +media(768)
+        gap: 20px
+        padding-top: 50px
+        flex-wrap: nowrap
+.btn-card
+    text-align: center
+    border: none
+    padding: 19px 0
+    max-height: 40px
+    color: #121212
+    font-size: 18rem
+    font-weight: 400
+    letter-spacing: 0.9px
+    justify-content: center
+    text-transform: uppercase
+    +media(1024)
+        max-height: 60px
+.cta-card
+    column-gap: 10px
+    justify-content: center
+    width: 100%
+    max-width: 365rem
+    border-radius: 20rem
+.haracteristic-btn
+    column-gap: 10rem
+    grid-template-columns: repeat(4, 1fr)
+    +media(1024)
+        column-gap: 30rem
+.transparent-cta
+    display: inline-block
+    width: 100%
+    // max-width: 75rem
+    padding: 14rem
+    border-radius: 10rem
+    font-size: 10rem
+    border: 1px solid #C4C4C4
+    color: #121212
+    text-align: center
+    font-family: Mariupol
+    font-weight: 500
+    letter-spacing: 0.9rem
+    text-transform: uppercase
+    transition: all .5s ease
+    +media(1024)
+        font-size: 18rem
+        max-width: 230rem
+    &:hover
+        color: #E31F25
+        border: 1px solid #E31F25
+    &.active
+        color: #E31F25
+        border: 1px solid #E31F25
+
+.grid-cart-description
+    gap: 30rem
+    +media(1024)
+        grid-template-columns: 3fr 7fr
+.description-product,
+.pay-block,
+.comment-card,
+.delivery-card
+    display: none
+
+.description-product.active,
+.pay-block.active,
+.comment-card.active,
+.delivery-card.active
+    display: block
+    padding-top: 30rem
+
+.text-card-descr
+    padding-bottom: 15px
+    font-size: 18rem
+    font-weight: 400
+
+.rate-review
+    display: flex
+    align-items: center
+    column-gap: 20rem
+    margin-bottom: 20rem
+
+.star-review
+    width: 15px
+    height: 15px
+    background-image: url(../img/send-review-star.svg)
+    cursor: pointer
+
+.star-review.active
+    background-image: url(../img/send-review-star-active.svg)
+
+.rate-stars
+    width: 140rem
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+.description-section
+    padding-top: 30px
+.haracteristic-block
+    order: 1
+    width: 90vw
+    +media(1024)
+        order: 0
+        width: auto
+    .visible-menu
+        padding: 0
+    span
+        color: #121212
+        font-size: 18rem
+        font-weight: 500
+        letter-spacing: 0.9px
+        text-transform: uppercase
+    table
+        overflow: auto
+        width: 100%
+        border-collapse: collapse
+        thead
+            background: #ECECEC
+            border-bottom: 1px solid #E0DEE1
+            th + th
+            border-left: 1px solid #E0DEE1
+            th
+                padding: 16rem 20rem
+                font-size: 12rem
+                font-weight: 400
+        tr
+            &:nth-child(odd)
+                background: #ECECEC
+        td + td
+                border-left: 1px solid #E0DEE1
+        td
+            padding: 16rem 20rem
+            font-size: 12rem
+            font-weight: 400
+.size-table
+    tbody
+        tr
+            &:nth-child(even)
+                background: #ECECEC
+            &:nth-child(odd)
+                background: #fff

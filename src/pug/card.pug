@@ -1,0 +1,249 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        link(rel="stylesheet" href="css/style.css")
+        title Дешевше - інтернет магазин необхідних товарів для всієї родини
+    body#body
+        header
+            .fixed-header
+                include components/header
+        main.wrapper
+            .d-flex.flex-arrow
+                a(href="#body").arrow-up.arrow
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
+                        <path d="M1 9L9 0.999999L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                a(href="#footer").arrow-down.arrow
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
+                        <path d="M1 0.999999L9 9L17 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            p.page-look.d-flex
+                a(href="index.html") головна
+                span /
+                a(href="#")  каталог
+                span /
+                a(href="#")  жіночий одяг
+                span /
+                span.selected-page джинсові шорти
+            .card-main 
+                .img-block-mobile 
+                    .img-slider.d-flex 
+                    .btn-slider
+                .img-block 
+                    a(href="#").btn.btn-next
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" fill="none">
+                            <path d="M115.5 20C115.5 20.2761 115.276 20.5 115 20.5C114.724 20.5 114.5 20.2761 114.5 20L115.5 20ZM114.646 9.64645C114.842 9.45119 115.158 9.45119 115.354 9.64645L118.536 12.8284C118.731 13.0237 118.731 13.3403 118.536 13.5355C118.34 13.7308 118.024 13.7308 117.828 13.5355L115 10.7071L112.172 13.5355C111.976 13.7308 111.66 13.7308 111.464 13.5355C111.269 13.3403 111.269 13.0237 111.464 12.8284L114.646 9.64645ZM114.5 20L114.5 10L115.5 10L115.5 20L114.5 20Z" fill="#E37523"/>
+                        </svg>
+                    .small-img
+                        .carousel-card.products-sm
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                            .small-img-parent.carousel-item
+                                picture 
+                                    img.small-image.image-for-slider(src="img/card.png" alt="")
+                    a(href="#").btn.btn-prev
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30"  fill="none">
+                            <path d="M115.5 10C115.5 9.72386 115.724 9.5 116 9.5C116.276 9.5 116.5 9.72386 116.5 10L115.5 10ZM116.354 20.3536C116.158 20.5488 115.842 20.5488 115.646 20.3536L112.464 17.1716C112.269 16.9763 112.269 16.6597 112.464 16.4645C112.66 16.2692 112.976 16.2692 113.172 16.4645L116 19.2929L118.828 16.4645C119.024 16.2692 119.34 16.2692 119.536 16.4645C119.731 16.6597 119.731 16.9763 119.536 17.1716L116.354 20.3536ZM116.5 10L116.5 20L115.5 20L115.5 10L116.5 10Z" fill="#E37523"/>
+                        </svg>
+                    .main-img.general-img
+                        picture 
+                            img.main-card-img.image-for-slider(src="img/card.png" alt="")
+                form(action="#").text-block
+                    .header-card
+                        h1 Жіноча футболка OVERSIZE з принтом
+                        .flex-between.item-center
+                            .price-block.d-flex.item-center
+                                p.price Оптова ціна - 890 грн
+                                p.old-price 1090 грн
+                        p.price-descr рекомендована ціна для продажу у роздріб - 1200 грн
+                        .article Артикул: 85769
+                    .size-block.d-flex
+                        h3 Оберіть розмір:
+                        p.size.d-flex.size-card
+                            input(type="radio" id="size1" name="size" disabled)
+                            label(for="size1") 
+                                span XS
+                            input(type="radio" id="size2" name="size")
+                            label(for="size2") 
+                                span S
+                            input(type="radio" id="size3" name="size")
+                            label(for="size3") 
+                                span M
+                            input(type="radio" id="size4" name="size")
+                            label(for="size4") 
+                                span L
+                            input(type="radio" id="size5" name="size")
+                            label(for="size5") 
+                                span XXl
+                    .color-block.d-flex
+                        h3 Оберіть колір:
+                        p.color.d-flex.color-input
+                            label
+                                input(type="radio", name="color" value="black")
+                            label
+                                input(type="radio", name="color" value="red")
+                            label
+                                input(type="radio", name="color" value="blue")
+                            label
+                                input(type="radio", name="color" value="gray")
+                            label
+                                input(type="radio", name="color" value="white") 
+                    .count.d-flex.item-center
+                        h3 Кількість:
+                        .count-container.d-flex.item-center 
+                            a(href="#").minus 
+                                span -
+                            span.number 
+                                span 1
+                            a(href="#").plus 
+                                span +
+                    .flex-between.btn-block
+                        button(type="submit").btn-card.cta.cta-card.d-flex.item-center
+                            span підходить - купую
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21" fill="none">
+                                <path d="M5.85215 8V4C5.85215 2.34315 7.1953 1 8.85215 1C10.509 1 11.8521 2.34315 11.8521 4V8M1.85215 16H15.8521M3.0001 20H14.7042C15.8649 20 16.7818 19.0152 16.6991 17.8575L15.9848 7.8575C15.9101 6.81089 15.0392 6 13.9899 6H3.71439C2.66511 6 1.79423 6.81089 1.71947 7.85751L1.00519 17.8575C0.92249 19.0152 1.83942 20 3.0001 20Z" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        a(href="#").btn-card.cta-more.d-flex.item-center залишити відгук
+            section.grid.grid-cart-description
+                .haracteristic-block 
+                    div 
+                        a(href="#").flex-between.item-center.readmore-menu.readmore-arrow
+                            span заміри виробу
+                        .description-menu
+                            table 
+                                tbody 
+                                    tr
+                                        td Довжина переду виробу, см
+                                        td 62см
+                                    tr
+                                        td Довжина рукава від горловини, см
+                                        td 38см
+                                    tr
+                                        td Ширина між проймами рукавів (над грудьми), см
+                                        td 58см
+                                    tr
+                                        td Довжина рукава по внутрішньому шву, см
+                                        td 8см
+                    div 
+                        a(href="#").flex-between.item-center.readmore-menu.readmore-arrow
+                            span Розмірна сітка
+                        .description-menu
+                            table.size-table 
+                                thead 
+                                    tr
+                                        th розмір
+                                        th міжнародний розмір
+                                        th обхват грудей
+                                        th обхват талії
+                                        th обхват стегон
+                                tbody 
+                                    tr
+                                        td 34
+                                        td xs
+                                        td 80-84
+                                        td 60-62
+                                        td 88-92
+                                    tr
+                                        td 36
+                                        td S
+                                        td 84-90
+                                        td 62-64
+                                        td 92-94
+                                    tr
+                                        td 38
+                                        td m
+                                        td 90-94
+                                        td 64-66
+                                        td 94-96
+                                    tr
+                                        td 40
+                                        td l
+                                        td 94-98
+                                        td 66-68
+                                        td 96-100
+                                    tr
+                                        td 42
+                                        td xl
+                                        td 98-102
+                                        td 68-74
+                                        td 100-106
+                                    tr
+                                        td 44
+                                        td xxl
+                                        td 102-104
+                                        td 74-78
+                                        td 106-112
+                    div 
+                        a(href="#").flex-between.item-center.readmore-menu.readmore-arrow
+                            span Характеристики товару
+                        .description-menu
+                            table 
+                                tbody 
+                                    tr
+                                        td Країна
+                                        td Туреччина
+                                    tr
+                                        td Матеріал
+                                        td Трикотаж
+                                    tr
+                                        td Склад тканини
+                                        td 100% бавовна
+                                    tr
+                                        td Параметри моделі
+                                        td 90х60х90 зріст 175
+                                    tr
+                                        td Універсальність
+                                        td Виміри однакові для усіх розмірів
+                                    tr
+                                        td Розмір на фото
+                                        td S
+                .description-section 
+                    .haracteristic-btn.grid
+                        a.transparent-cta(href="#" data-target="about") опис
+                        a.transparent-cta(href="#" data-target="pay") оплата
+                        a.transparent-cta(href="#" data-target="delivery") доставка
+                        a.transparent-cta(href="#" data-target="reviews") відгук 
+                    .description-product#about
+                        p.text-card-descr Якщо бажаєш додати більше стилю до своїх літніх образів, варто звернути увагу на модну жіночу футболку з оригінальним написом, який додасть нових акцентів і зробить твій аутфіт унікальним та яскравим.
+                        p.text-card-descr Футболка з таким принтом стане чудовим доповненням до будь-якого гардеробу і додасть індивідуальності кожному образу.
+                        p.text-card-descr Принт розташований спереду по центру виробу, що робить його помітним та стильним акцентом. Нижній край футболки прямий, що додає їй класичного вигляду, а короткі рукави та опущені пройми забезпечують комфорт і свободу рухів.
+                        p.text-card-descr Кругла горловина обшита бейкою в тон футболки, що додає завершеності образу і робить виріб ще більш стильним. Це ідеальний варіант для літнього сезону, який дозволить тобі виглядати модно та впевнено.
+                    .pay-block#pay
+                        p.mark-list.text-card-descr Оплата онлайн через сервіс Liqpay одразу при оформленні замовлення (Visa, Mastercard, Apple Pay, Google Pay);
+                        p.mark-list.text-card-descr Оплата на рахунок (за реквізитами IBAN). Реквізити будуть надані на пошту після узгодження усіх деталей замовлення. 100% передоплата. Оплату можна здійснити в будь-якому відділенні банку, через термінали самообслуговування або через онлайн-банкінг;
+                        p.mark-list.text-card-descr При замовленні кур'єрської доставки з нашого магазину— оплата на місці (готівкою чи терміналом);
+                        p.mark-list.text-card-descr Оплата на відділенні Нової Пошти при отриманні посилки (послуга "зворотня доставка");
+                        p.mark-list.text-card-descr Є можливість оплатити PayPal.
+                    .comment-card#reviews
+                        .comment-block
+                            - for(let i = 0; i < 3; i++)
+                                include components/comment-card
+                        .cta-container.d-flex
+                            a(href="#").cta.cta-card.review-cta усі відгуки 
+                    .delivery-card#delivery 
+                        p.mark-list.text-card-descr Доставка по Україні здійснюється Новою Поштою або іншим зручним для вас перевізником. Термін доставки 1–2 дні. Вартість — за тарифами перевізника і залежить від ваги; На відділення Новою Пошти вартість від 70 грн; адресна доставка від 105 грн;
+                        p.mark-list.text-card-descr Доставка в будь-яку країну світу здійснюється Укрпоштою; Будь ласка, зв'яжіться з нами, аби обговорити умови оплати та доставки у будь-яку точку світу (крім рф та білорусі).
+            section.view-product.top-prodaz-main
+                h2 ви переглядали
+                include components/card-sliderPage
+        footer#footer
+            include components/footer
+        script(src="js/scripts.js")

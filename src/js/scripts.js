@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.addEventListener("mouseleave", function () {
                     const link = this.querySelector("a"),
                         subMenu = this.querySelector(".sub-menu-main") || this.querySelector(".help-sub-menu")
-                    
+
                     if (link) removeHoverClass(link, "yellow-header-hover")
                     if (subMenu) removeHoverClass(subMenu, subMenu.classList.contains("sub-menu-main") ? "hover-sub-menu" : "hover-help-menu")
                 })
@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (window.innerWidth < 1024) {
                 blackFon.addEventListener("click", function () {
                     closeMenu()
-                    
+
                 })
             }
-            
+
             function closeMenu() {
                 burger.classList.remove('active')
                 burger.classList.add("noactive")
@@ -285,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
         buttons.forEach((item) => {
             item.addEventListener("click", function (e) {
                 e.preventDefault()
+                console.log(item.nextElementSibling);
                 const descriptionMore = item.nextElementSibling
                 descriptionMore.classList.toggle(visibleClass)
                 item.classList.toggle(activeClass)
@@ -396,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault()
             const target = document.getElementById(this.getAttribute('data-target')),
                 targerEye = this.querySelector("svg")
-                console.log(targerEye);
+            console.log(targerEye);
             console.log(targerEye);
             if (target.type === 'password') {
                 target.type = 'text'
@@ -817,22 +818,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //         transitionCard: "all .5s ease-in-out",
     //     })
     // })
-
-    const mainSlider = new InfinitySlider(".main_container", {
-        isArrows: false,
-        isDots: true,
-        distanceToDots: 10,
-        isSlidesToScrollAll: false,
-        baseCardWidth: "1000px",
-        gap: 50,
-        isAutoplay: false,
-        autoplaySpeed: 10000,
-        isEffectFadeOut: true,
-        transitionCard: "all 1.5s ease",
-    })
-    const sliderCategoryBlocks = document.querySelectorAll(".category-container")
-    let sliderInterval
-    // if(sliderCategoryBlocks.length >= 4) {
+    let baseCardSliderWidth
     if (window.innerWidth > 1024) {
         baseCardSliderWidth = window.innerWidth / 5
         console.log(baseCardSliderWidth);
@@ -840,20 +826,20 @@ document.addEventListener("DOMContentLoaded", function () {
         baseCardSliderWidth = window.innerWidth / 4
 
     }
-    const categorySlider = new InfinitySlider(".category_container-slider", {
-        isArrows: true,
-        isDots: false,
-        isSlidesToScrollAll: false,
-        baseCardWidth: baseCardSliderWidth,
-        gap: 20,
-        isAutoplay: false,
-        autoplaySpeed: 3000,
-        transitionCard: "all 1.5s ease",
-    })
-    const productSlider = document.querySelectorAll(".card-product-slider")
-    let sliderGalery = {}
-    productSlider.forEach((sliderG, i) => {
-        sliderGalery["img-key-g" + (i + 1)] = new InfinitySlider("#sliderProduct" + (i + 1), {
+    if (document.querySelector(".category_container-slider")) {
+        const mainSlider = new InfinitySlider(".main_container", {
+            isArrows: false,
+            isDots: true,
+            distanceToDots: 10,
+            isSlidesToScrollAll: false,
+            baseCardWidth: "1000px",
+            gap: 50,
+            isAutoplay: false,
+            autoplaySpeed: 10000,
+            isEffectFadeOut: true,
+            transitionCard: "all 1.5s ease",
+        })
+        const categorySlider = new InfinitySlider(".category_container-slider", {
             isArrows: true,
             isDots: false,
             isSlidesToScrollAll: false,
@@ -863,31 +849,53 @@ document.addEventListener("DOMContentLoaded", function () {
             autoplaySpeed: 3000,
             transitionCard: "all 1.5s ease",
         })
-    })
-    // const cardSlider = new InfinitySlider(".card-product-slider", {
-    //     isArrows: true,
-    //     isDots: false,
-    //     isSlidesToScrollAll: false,
-    //     baseCardWidth: baseCardSliderWidth,
-    //     gap: 20,
-    //     isAutoplay: false,
-    //     autoplaySpeed: 3000,
-    //     transitionCard: "all 1.5s ease",
-    // })
-    window.onresize = function () {
-        categorySlider.init()
-        // cardSlider.init()        
-        Object.keys(sliderGalery).forEach(sliderKeyG => {
-            sliderGalery[sliderKeyG].init()
+        const productSlider = document.querySelectorAll(".card-product-slider")
+        let sliderGalery = {}
+        productSlider.forEach((sliderG, i) => {
+            sliderGalery["img-key-g" + (i + 1)] = new InfinitySlider("#sliderProduct" + (i + 1), {
+                isArrows: true,
+                isDots: false,
+                isSlidesToScrollAll: false,
+                baseCardWidth: baseCardSliderWidth,
+                gap: 20,
+                isAutoplay: false,
+                autoplaySpeed: 3000,
+                transitionCard: "all 1.5s ease",
+            })
         })
-        mainSlider.init()
+        window.onresize = function () {
+            categorySlider.init()
+            Object.keys(sliderGalery).forEach(sliderKeyG => {
+                sliderGalery[sliderKeyG].init()
+            })
+            mainSlider.init()
+        }
+        sliderInterval = setInterval(() => {
+            categorySlider.init()
+            Object.keys(sliderGalery).forEach(sliderKeyG => {
+                sliderGalery[sliderKeyG].init()
+            })
+            mainSlider.init()
+        }, 100);
     }
-    categorySlider.init()
-    // cardSlider.init() 
-    Object.keys(sliderGalery).forEach(sliderKeyG => {
-        sliderGalery[sliderKeyG].init()
-    })
-    mainSlider.init()
+    if (document.querySelector(".card-slider")) {
+        const cardSlider = new InfinitySlider(".card-slider", {
+            isArrows: true,
+            isDots: false,
+            isSlidesToScrollAll: false,
+            baseCardWidth: baseCardSliderWidth,
+            gap: 20,
+            isAutoplay: false,
+            autoplaySpeed: 3000,
+            transitionCard: "all 1.5s ease",
+        })
+
+        window.onresize = function () {}
+        sliderInterval = setInterval(() => {
+            cardSlider.init()
+        }, 100);
+    }
+
 
     const buttons = document.querySelectorAll('.toggle-section')
     console.log(buttons);
@@ -912,8 +920,300 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    let carouselContainer = document.querySelector(".small-img"),
+        imgBlock = document.querySelector(".img-block")
+
+    // console.log(carouselContainer);
+    if (!carouselContainer && imgBlock) {
+        imgBlock.style.display = "block"
+        imgBlock.style.maxHeight = "500px"
+    }
+
+    function slider() {
+        const sliderContainer = document.querySelector('.carousel-card'),
+            sliderImages = [...document.querySelectorAll('.carousel-item')],
+            btnSlider = document.querySelectorAll(".btn"),
+            imgBlock = document.querySelector(".img-block"),
+            carouselContainer = document.querySelector(".small-img"),
+            mainImg = document.querySelector(".main-img")
+        let imageHeight = sliderImages[0].offsetHeight + 8,
+            imageWidth = sliderImages[0].offsetWidth
+
+        let containerHeight = imageHeight * 3
+        console.log(containerHeight, imageWidth);
+        imgBlock.style.height = containerHeight + "px"
+        carouselContainer.style.height = containerHeight + "px"
+        let currentSlide = 0
+        btnSlider.forEach(itemBtn => {
+            if (sliderImages.length > 3) {
+                itemBtn.style.display = "block"
+                // mainImg.style.padding = "20px 0"
+                carouselContainer.style.padding = "8px 0 0"
+            } else {
+                itemBtn.style.display = "none"
+                carouselContainer.style.padding = ""
+            }
+        })
+
+        function nextSlide(e) {
+            e.preventDefault()
+            if (currentSlide > 0) {
+                currentSlide--
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
+        }
+
+        function prevSlide(e) {
+            e.preventDefault()
+            if (currentSlide < sliderImages.length - 3) {
+                currentSlide++
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
+        }
+
+        const nextButton = document.querySelector('.btn-next')
+        if (nextButton) {
+            nextButton.style.width = imageWidth + "px"
+            nextButton.addEventListener('click', nextSlide)
+        }
+
+        const prevButton = document.querySelector('.btn-prev')
+        if (prevButton) {
+            prevButton.style.width = imageWidth + "px"
+            prevButton.addEventListener('click', prevSlide)
+        }
+
+    }
+
+    if (document.querySelector(".carousel-item")) {
+        slider()
+        window.addEventListener('resize', () => {
+            slider()
+        })
+    }
 
 
+    const image = document.querySelectorAll(".card img")
+
+    image.forEach(itemImg => {
+        itemImg.addEventListener("click", function () {
+            var targetUrl = "card.html"
+
+            window.location.href = targetUrl
+        })
+    })
+
+    if (document.querySelector("#delivery")) {
+        const buttons = document.querySelectorAll('.transparent-cta'),
+            sections = document.querySelectorAll('.description-product, .pay-block, .comment-card, .delivery-card')
+
+        function hideAllSections() {
+            sections.forEach(section => section.classList.remove('active'))
+        }
+
+        function deactivateAllButtons() {
+            buttons.forEach(button => button.classList.remove('active'))
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault()
+                console.log("+");
+                const target = button.getAttribute('data-target')
+
+                hideAllSections()
+                deactivateAllButtons()
+
+                const sectionToShow = document.getElementById(target)
+                if (sectionToShow) {
+                    sectionToShow.classList.add('active')
+                    button.classList.add('active')
+                }
+            })
+        })
+
+        hideAllSections()
+        deactivateAllButtons()
+        document.querySelector('.description-product').classList.add('active')
+        document.querySelector('[data-target="about"]').classList.add('active')
+    }
+
+    //mobile slider
+    if (window.innerWidth < 1024 && document.querySelector(".btn-slider")) {
+        const imageItems = document.querySelectorAll(".image-for-slider"),
+            imgSliderBlock = document.querySelector(".img-slider"),
+            btnSlider = document.querySelector(".btn-slider")
+
+        imageItems.forEach((imgItem, index) => {
+            let sliderImageItem = document.createElement("img"),
+                inputSliderRadio = document.createElement("input"),
+                labelslider = document.createElement("label")
+
+            inputSliderRadio.type = "radio"
+            inputSliderRadio.name = "slider-radio"
+            inputSliderRadio.id = `slider-radio-${index}`
+            labelslider.setAttribute("for", `slider-radio-${index}`)
+            if (index === 0) inputSliderRadio.checked = true
+
+            sliderImageItem.src = imgItem.src
+            sliderImageItem.classList.add("mobile-slider")
+            if (index === 0) sliderImageItem.classList.add("active")
+
+            imgSliderBlock.appendChild(sliderImageItem)
+            btnSlider.appendChild(inputSliderRadio)
+            btnSlider.appendChild(labelslider)
+        })
+
+        const radioButtons = document.querySelectorAll('input[name="slider-radio"]'),
+            comments = document.querySelectorAll('.mobile-slider')
+        let currentIndexRadio = 0
+
+        function switchComment(index) {
+            radioButtons[index].checked = true
+            comments.forEach((comment) => {
+                comment.classList.remove('active')
+            })
+            comments[index].classList.add('active')
+            currentIndexRadio = index
+        }
+
+        radioButtons.forEach((radioButton, index) => {
+            radioButton.addEventListener('change', () => {
+                switchComment(index)
+            })
+        })
+
+        imgSliderBlock.addEventListener('touchstart', handleTouchStart, false)
+        imgSliderBlock.addEventListener('touchmove', handleTouchMove, false)
+
+        let x1 = null
+
+        function handleTouchStart(evt) {
+            const firstTouch = evt.touches[0]
+            x1 = firstTouch.clientX
+        }
+
+        function handleTouchMove(evt) {
+            if (!x1) {
+                return false
+            }
+
+            let x2 = evt.touches[0].clientX
+            let xDiff = x2 - x1
+
+            if (xDiff > 0) {
+                currentIndexRadio = (currentIndexRadio - 1 + radioButtons.length) % radioButtons.length
+            } else {
+                currentIndexRadio = (currentIndexRadio + 1) % radioButtons.length
+            }
+
+            switchComment(currentIndexRadio)
+
+            x1 = null
+        }
+    }
+
+    //slider fow window width > 1024
+    function slider() {
+        const sliderContainer = document.querySelector('.carousel-card'),
+            sliderImages = [...document.querySelectorAll('.carousel-item')],
+            btnSlider = document.querySelectorAll(".btn"),
+            imgBlock = document.querySelector(".img-block"),
+            carouselContainer = document.querySelector(".small-img"),
+            mainImg = document.querySelector(".main-img")
+
+        let imageHeight = sliderImages[0].offsetHeight + 10,
+            containerHeight = imageHeight * 2 + 55,
+            imageWidth = sliderImages[0].offsetWidth
+        // console.log(btnHeight);
+        imgBlock.style.height = containerHeight + 50 + "px"
+        carouselContainer.style.height = containerHeight + "px"
+        let currentSlide = 0
+        btnSlider.forEach(itemBtn => {
+            if (sliderImages.length > 2) {
+                itemBtn.style.display = "block"
+                carouselContainer.style.padding = "75px 0 25px"
+                carouselContainer.style.margin = "0 0 25px"
+            } else {
+                itemBtn.style.display = "none"
+                carouselContainer.style.padding = ""
+            }
+        })
+
+        function nextSlide(e) {
+            e.preventDefault()
+            if (currentSlide > 0) {
+                currentSlide--
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
+        }
+
+        function prevSlide(e) {
+            e.preventDefault()
+            if (currentSlide < sliderImages.length - 2) {
+                currentSlide++
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
+        }
+
+        const nextButton = document.querySelector('.btn-next')
+        if (nextButton) {
+            nextButton.style.width = imageWidth + "px"
+            nextButton.querySelector("svg").style.width = imageWidth + "px"
+            nextButton.addEventListener('click', nextSlide)
+        }
+
+        const prevButton = document.querySelector('.btn-prev')
+        if (prevButton) {
+            prevButton.style.width = imageWidth + "px"
+            prevButton.querySelector("svg").style.width = imageWidth + "px"
+            prevButton.addEventListener('click', prevSlide)
+        }
+
+    }
+    if (document.querySelector(".img-block")) {
+        slider()
+        window.addEventListener('resize', () => {
+            slider()
+        })
+    }
+    if (document.querySelector(".main-img img")) {
+        const mainImg = document.querySelector(".main-img img"),
+            smallImg = document.querySelectorAll(".small-img img")
+
+        smallImg.forEach(img => {
+            img.style.cursor = "pointer"
+            img.addEventListener("click", function () {
+                const smallUrl = this.src;
+                const bigUrl = mainImg.src;
+                mainImg.src = smallUrl;
+                this.src = bigUrl;
+            })
+        })
+    }
+    const stars = document.querySelectorAll('.star-review')
 
 
+    for (let i = 0; i < stars.length; i++) {
+        stars[i].addEventListener('click', function () {
+            setRating(this.getAttribute('data-value'))
+        })
+    }
+
+    function setRating(rating) {
+        rating = parseInt(rating)
+
+        for (let i = 0; i < stars.length; i++) {
+            if (i < rating) {
+                stars[i].classList.add('active')
+            } else {
+                stars[i].classList.remove('active')
+            }
+        }
+
+    }
 })

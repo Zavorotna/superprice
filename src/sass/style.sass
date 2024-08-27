@@ -1,6 +1,7 @@
 @import components/mixins
 @import components/header
 @import components/header-menu
+@import components/card
 
 *
     margin: 0
@@ -207,7 +208,6 @@ body, button
         letter-spacing: 2.4px
         text-transform: uppercase
 
-
 .category-slider
     // width: 100%
     gap: 30px
@@ -410,7 +410,7 @@ body, button
             transition: all 0.5s ease
         &:hover
             color: #D52627
-        &:hover 
+        &:hover
             &:before
                 width: 100%
 a.active-btn,
@@ -429,18 +429,52 @@ div.view-all
         color: #999
         font-size: 18px
         font-weight: 400
-        text-decoration-line: underline    
+        text-decoration-line: underline
         text-transform: lowercase
-        letter-spacing: 0.7px  
+        letter-spacing: 0.7px
 .container
     padding-bottom: 50px
     +media(1024)
         padding-bottom: 100px
 .catalog-cta-center
     justify-content: center
-
-
-
+.comment-block
+    padding-bottom: 30px
+.comment
+    padding: 20px 30px 30px 30px
+    margin-bottom: 10px
+    border-radius: 10px
+    border: 1px solid #C4C4C4
+.head-comment
+    font-size: 18px
+    font-weight: 500
+    p
+        &:last-child
+            color: #C4C4C4
+.star
+    padding: 10px 0 15px
+.descript-comment
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.2em
+.review-cta
+    display: inline-block
+    padding: 20px 0
+    font-size: 18px
+    color: #fff
+.cta-container
+    justify-content: center
+.top-prodaz-main
+    > h2
+        padding-bottom: 50px
+        text-align: center
+        font-size: 18px
+        font-weight: 500
+        letter-spacing: 2.4px
+        text-transform: uppercase
+        +media(1024)
+            font-size: 48rem
+    
 @import components/popup-reg
 @import components/basket
 @import components/catalog-product-card
