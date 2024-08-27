@@ -1,40 +1,41 @@
 figure.card 
     figcaption 
         form(action="").main-info-card.item-center
+            a(href="card.html").card-route
             .img-card.image-block-card
                 picture 
                     img(src="img/card.png", alt="")
             .description_card_container
                 h2 Жіноча футболка oversize з принтом
                 p.article артикул: 85769
-                .color.d-flex.item-center
-                    label
-                        input(type="radio", name="color" value="black" required)
-                    label
-                        input(type="radio", name="color" value="red" disabled required)
-                    label
-                        input(type="radio", name="color" value="blue" required)
-                    label
-                        input(type="radio", name="color" value="gray" disabled required)
-                    label
-                        input(type="radio", name="color" value="white" required) 
-                .size.d-flex.item-center
-                    p
-                        input(type="radio", name="size" id="s" required)
-                        label(for="s") s
-                    p
-                        input(type="radio", name="size" id="m" required)
-                        label(for="m") m
-                    p
-                        input(type="radio", name="size" id="l" required)
-                        label(for="l") l
-                    p
-                        input(type="radio", name="size" id="xl" required)
-                        label(for="xl") xl
-                p.price.d-flex.item-center
-                    span оптова ціна - 890 грн
-                    span 1090 грн
-                p.order-info_card рекомендована ціна для продажу у роздріб - 1200 грн
+            .color.d-flex.item-center
+                label
+                    input(type="radio", name="color" value="black" required)
+                label
+                    input(type="radio", name="color" value="red" disabled required)
+                label
+                    input(type="radio", name="color" value="blue" required)
+                label
+                    input(type="radio", name="color" value="gray" disabled required)
+                label
+                    input(type="radio", name="color" value="white" required) 
+            .size.d-flex.item-center
+                p
+                    input(type="radio", name="size" id="s" required)
+                    label(for="s") s
+                p
+                    input(type="radio", name="size" id="m" required)
+                    label(for="m") m
+                p
+                    input(type="radio", name="size" id="l" required)
+                    label(for="l") l
+                p
+                    input(type="radio", name="size" id="xl" required)
+                    label(for="xl") xl
+            p.price.d-flex.item-center
+                span оптова ціна - 890 грн
+                span 1090 грн
+            p.order-info_card рекомендована ціна для продажу у роздріб - 1200 грн
             button(type="submit") в корзину
 
 

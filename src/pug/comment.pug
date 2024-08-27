@@ -8,7 +8,7 @@ html(lang="en")
         header
             .fixed-header
                 include components/header
-        main.wrapper
+        main.wrapper.rewiev-page
             p.page-look.d-flex
                 a(href="index.html") головна
                 span /
@@ -18,6 +18,7 @@ html(lang="en")
                 .revies 
                     - for(let i = 0; i < 3; i++)
                         include components/comment-card
+                    include components/pagination
                 .rewiev-form 
                     form(action="#")
                         .form-comment 
@@ -25,20 +26,32 @@ html(lang="en")
                             p.form-to-add_comment
                                 p
                                     p 
-                                        label(for="name") Імʼя та прізвище*
+                                        label(for="name") Ваше Імʼя*
                                     p 
-                                        input#name(type="text" name="name" required placeholder="Імʼя та прізвище")
+                                        input#name(type="text" name="name" required)
                                 p
                                     p 
-                                        label(for="mail") E-mail*
+                                        label(for="userPhone") Ваш телефон*
                                     p
-                                        input#mail(type="email" name="mail" required placeholder="E-mail") 
+                                        input#mail(type="tel" name="userPhone" required) 
+                                .star
+                                    p Ваша оцінка*
+                                    .rate-stars
+                                        .star-review(data-value="1")
+                                        .star-review(data-value="2")
+                                        .star-review(data-value="3")
+                                        .star-review(data-value="4")
+                                        .star-review(data-value="5")
                                 p
                                     p 
-                                        label(for="comment") Відгук
+                                        label(for="comment") Ваше повідомлення*
                                     p 
-                                        textarea#comment(name="comment" placeholder="Написати відгук")
-                                button(type="submit").btn-card.yellow-cta надіслати
+                                        textarea#comment(name="comment")
+                                p.d-flex.item-center
+                                    input(type="checkbox" id="privacyCheck")
+                                    label(for="privacyCheck") Я прочитав (ла) Політику конфіденційності і згоден (на) з умовами
+                                button(type="submit").btn-card.yellow-cta відправити
 
         footer 
             include components/footer
+        script(src="js/scripts.js")

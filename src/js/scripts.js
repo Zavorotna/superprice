@@ -1172,9 +1172,8 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
+    
     const stars = document.querySelectorAll('.star-review')
-
-
     for (let i = 0; i < stars.length; i++) {
         stars[i].addEventListener('click', function () {
             setRating(this.getAttribute('data-value'))

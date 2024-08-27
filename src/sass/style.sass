@@ -320,8 +320,15 @@ body, button
         color: #999
 
 .card
+    position: relative
     +media(1024)
         max-width: 23vw
+.card-route 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 72%
 .img-card
     min-width: 160rem
     border-radius: 5px
@@ -361,7 +368,11 @@ body, button
 .size,
 .price
     padding-bottom: 10rem
-
+.color,
+.size,
+.price
+    position: relative
+    z-index: 2
 .price
     column-gap: 5px
     flex-wrap: wrap
