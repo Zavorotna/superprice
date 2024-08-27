@@ -846,9 +846,9 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             mainSlider.init()
         }
-        clearInterval(sliderInterval)
         sliderInterval = setInterval(() => {
             categorySlider.init()
+            clearInterval(sliderInterval)
             Object.keys(sliderGalery).forEach(sliderKeyG => {
                 sliderGalery[sliderKeyG].init()
             })
@@ -867,7 +867,9 @@ document.addEventListener("DOMContentLoaded", function () {
             transitionCard: "all 1.5s ease",
         })
 
-        window.onresize = function () {}
+        window.onresize = function () {
+            cardSlider.init()
+        }
         clearInterval(sliderInterval)
         sliderInterval = setInterval(() => {
             cardSlider.init()
