@@ -1,0 +1,41 @@
+.privacy-h1
+    margin: 0
+    font-size: 24rem
+    font-weight: 600
+    text-align: center
+    +media(1024)
+        text-align: left
+.pad-text
+    padding-bottom: 30rem
+
+.privacy-head-text
+    font-size: 18rem
+    font-weight: 600
+
+.main-text, 
+.privacyPolice-page ul
+    font-size: 18rem
+    font-weight: 400
+    line-height: normal
+
+.privacyPolice-page
+    padding-bottom: 50px    
+    li
+        position: relative
+        padding-left: 30rem
+        margin-bottom: 15rem
+        &::before
+            content: ""
+            position: absolute
+            width: 3rem
+            height: 3rem
+            top: 50%
+            left: 15rem
+            background-color: #000
+            border-radius: 50%
+    .top-mark10
+        &::before
+            top: 10%
+    .top-mark20
+        &::before
+            top: 20%

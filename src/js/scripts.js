@@ -1210,9 +1210,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
         document.body.querySelector(".toast").style.zIndex = "10000"
     
-        // toastTimeout = setTimeout(function () {
-        //     document.body.querySelector(".toast").style.zIndex = "-10"
-        // }, 5000)
+        toastTimeout = setTimeout(function () {
+            document.body.querySelector(".toast").style.zIndex = "-10"
+        }, 5000)
     };
 
     const rateBlocks = document.querySelectorAll('.rate-stars')
@@ -1235,26 +1235,26 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
     })
-    const form = document.querySelector('.rewiev-form form') 
-
-    form.addEventListener('submit', function (event) {
-        let isValid = false;
-        const rateBlocks = document.querySelectorAll('.rate-stars')
-
-        rateBlocks.forEach(block => {
-            const stars = block.querySelectorAll('.star-review.active')
-            if (stars.length > 0) {
-                isValid = true 
+    
+    if(window.innerWidth < 1024 && document.querySelector('.review-btn')) {
+        const form = document.querySelector('.rewiev-form form') 
+    
+        form.addEventListener('submit', function (event) {
+            let isValid = false;
+            const rateBlocks = document.querySelectorAll('.rate-stars')
+    
+            rateBlocks.forEach(block => {
+                const stars = block.querySelectorAll('.star-review.active')
+                if (stars.length > 0) {
+                    isValid = true 
+                }
+            })
+    
+            if (!isValid) {
+                event.preventDefault() 
+                showToast("Будь ласка, поставте оцінку.")
             }
         })
-
-        if (!isValid) {
-            event.preventDefault() 
-            showToast("Будь ласка, поставте оцінку.")
-        }
-    })
-
-    if(window.innerWidth < 1024) {
         const rewievBtn = document.querySelector('.review-btn'),
             formReviewBtn = document.querySelector('.review-form-btn'),
             rewievs = document.querySelector('.revies'),

@@ -23,6 +23,15 @@ body
     color: #121212
 body, button
     font-family: 'Mariupol'
+h1
+    padding-bottom: 40px
+    font-size: 18px
+    font-weight: 500
+    letter-spacing: 2.4px
+    text-align: center
+    text-transform: uppercase
+    +media(1024)
+        font-size: 48rem
 .wrapper
     max-width: 90%
     margin: 0 auto
@@ -323,7 +332,7 @@ body, button
     position: relative
     +media(1024)
         max-width: 23vw
-.card-route 
+.card-route
     position: absolute
     top: 0
     left: 0
@@ -489,7 +498,7 @@ div.view-all
         +media(1024)
             font-size: 48rem
 
-.toast 
+.toast
     position: fixed
     top: 106px
     right: 25rem
@@ -503,13 +512,11 @@ div.view-all
     -webkit-animation: slideInRight .3s ease-in-out forwards, fadeOut .5s ease-in-out forwards 3s
     animation: slideInRight .3s ease-in-out forwards, fadeOut .5s ease-in-out forwards 3s
 
-
-.toast.closing 
+.toast.closing
     -webkit-animation: slideOutRight .5s ease-in-out forwards
     animation: slideOutRight .5s ease-in-out forwards
 
-
-.toast-progress 
+.toast-progress
     position: absolute
     display: block
     bottom: 0
@@ -520,8 +527,7 @@ div.view-all
     -webkit-animation: toastProgress 3s ease-in-out forwards
     animation: toastProgress 3s ease-in-out forwards
 
-
-.toast-content-wrapper 
+.toast-content-wrapper
     display: -webkit-box
     display: -ms-flexbox
     display: flex
@@ -532,13 +538,11 @@ div.view-all
     -ms-flex-align: center
     align-items: center
 
-
-.toast-icon 
+.toast-icon
     padding: 15rem 20rem
     font-size: 15rem
 
-
-.toast-message 
+.toast-message
     -webkit-box-flex: 1
     -ms-flex: 1
     flex: 1
@@ -546,24 +550,62 @@ div.view-all
     color: #000
     padding: 5rem
 
-
-.toast-success 
+.toast-success
     background: #E37523
 
-
-.toast-success .toast-progress 
+.toast-success .toast-progress
     background-color: #D52627
 
-
-.toast-info 
+.toast-info
     background: #ddd
 
-
-.toast-info .toast-progress 
+.toast-info .toast-progress
     background-color: #999
-   
+
+.mark-list
+    position: relative
+    padding-left: 15px
+    &::before
+        content: ""
+        position: absolute
+        top: 6px
+        left: 0
+        width: 4px
+        height: 4px
+        background-color: #000
+        border-radius: 50%
+.wrapper-contact
+    flex-wrap: wrap
+    padding-bottom: 100px
+    +media(768)
+        width: 50vw
+        margin: 0 auto
+    h2
+        padding-bottom: 20px
+        font-size: 16px
+        font-weight: 500
+        letter-spacing: 1.2px
+        text-transform: uppercase
+        +media(768)
+            font-size: 24px
+.form-contactPage
+    +media(768)
+        max-width: 360px
+div.page-contact,
+.grafic-contact
+    padding-bottom: 70rem
+    p
+        margin-bottom: 15px
+    p, a
+        column-gap: 10px
+    a
+        padding: 0
+    span
+        font-size: 16px
+        font-weight: 400
 @import components/popup-reg
 @import components/basket
 @import components/comment
+@import components/privacy
 @import components/catalog-product-card
 @import components/footer
