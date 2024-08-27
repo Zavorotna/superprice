@@ -870,10 +870,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.onresize = function () {
             cardSlider.init()
         }
-        clearInterval(sliderInterval)
-        sliderInterval = setInterval(() => {
-            cardSlider.init()
-        }, 1000);
+        cardSlider.init()
     }
 
 
