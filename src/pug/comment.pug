@@ -15,7 +15,10 @@ html(lang="en")
                 span.selected-page відгуки
             h1 відгуки
             .rewiev-container.grid 
-                .revies 
+                .d-flex.item-center.cta-reg.review-btn-block
+                    a(href="#").review-btn.active-link переглянути
+                    a(href="#").review-form-btn залишити
+                .revies.d-block
                     - for(let i = 0; i < 3; i++)
                         include components/comment-card
                     include components/pagination
@@ -33,8 +36,8 @@ html(lang="en")
                                     p 
                                         label(for="userPhone") Ваш телефон*
                                     p
-                                        input#mail(type="tel" name="userPhone" required) 
-                                .star
+                                        input#userPhone(class="inputMask" type="tel" name="userPhone" required) 
+                                .star.star-review-block
                                     p Ваша оцінка*
                                     .rate-stars
                                         .star-review(data-value="1")
@@ -47,11 +50,11 @@ html(lang="en")
                                         label(for="comment") Ваше повідомлення*
                                     p 
                                         textarea#comment(name="comment")
-                                p.d-flex.item-center
+                                p.d-flex.item-center.checkbox-rewiev
                                     input(type="checkbox" id="privacyCheck")
                                     label(for="privacyCheck") Я прочитав (ла) Політику конфіденційності і згоден (на) з умовами
-                                button(type="submit").btn-card.yellow-cta відправити
+                                button(type="submit").btn-card.cta.cta-card.d-flex.item-center відправити
 
         footer 
             include components/footer
-        script(src="js/scripts.js")
+    script(src="js/scripts.js")

@@ -457,11 +457,14 @@ div.view-all
     border-radius: 10px
     border: 1px solid #C4C4C4
 .head-comment
-    font-size: 18px
+    font-size: 18rem
     font-weight: 500
     p
         &:last-child
+            font-size: 12px
             color: #C4C4C4
+            +media(1024)
+                font-size: 18rem
 .star
     padding: 10px 0 15px
 .descript-comment
@@ -485,7 +488,80 @@ div.view-all
         text-transform: uppercase
         +media(1024)
             font-size: 48rem
-    
+
+.toast 
+    position: fixed
+    top: 106px
+    right: 25rem
+    width: 310rem
+    background: #fff
+    padding: 5rem
+    border-radius: 4px
+    -webkit-box-shadow: -1px 1px 10px rgba(0, 0, 0, .3)
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, .3)
+    z-index: 1023
+    -webkit-animation: slideInRight .3s ease-in-out forwards, fadeOut .5s ease-in-out forwards 3s
+    animation: slideInRight .3s ease-in-out forwards, fadeOut .5s ease-in-out forwards 3s
+
+
+.toast.closing 
+    -webkit-animation: slideOutRight .5s ease-in-out forwards
+    animation: slideOutRight .5s ease-in-out forwards
+
+
+.toast-progress 
+    position: absolute
+    display: block
+    bottom: 0
+    left: 0
+    height: 4px
+    width: 100%
+    background: #b7b7b7
+    -webkit-animation: toastProgress 3s ease-in-out forwards
+    animation: toastProgress 3s ease-in-out forwards
+
+
+.toast-content-wrapper 
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+
+
+.toast-icon 
+    padding: 15rem 20rem
+    font-size: 15rem
+
+
+.toast-message 
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    font-size: 13rem
+    color: #000
+    padding: 5rem
+
+
+.toast-success 
+    background: #E37523
+
+
+.toast-success .toast-progress 
+    background-color: #D52627
+
+
+.toast-info 
+    background: #ddd
+
+
+.toast-info .toast-progress 
+    background-color: #999
+   
 @import components/popup-reg
 @import components/basket
 @import components/comment
