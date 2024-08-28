@@ -1361,6 +1361,168 @@ document.addEventListener("DOMContentLoaded", function () {
                 parentDescr[index].appendChild(item)
             })
     }
+    // function rearrangeSections() {
+    //     if (window.innerWidth < 1024) {
+    //         const sections = [{
+    //                 buttonSelector: '.haracteristic-btn a',
+    //                 targetAttr: 'data-target',
+    //                 sectionSelector: '.description-product, .haracteristic-block, .comment-card, .delivery-card',
+    //                 initialButtonSelector: '.transparent-cta[data-target="about"]',
+    //                 initialSectionId: 'about',
+    //                 readmoreClass: 'readmore',
+    //                 moreClass: 'description-more',
+    //                 activeClass: 'readmore-active',
+    //                 visibleClass: 'visible'
+    //             },
+    //             {
+    //                 buttonSelector: '.menu-help-item a',
+    //                 targetAttr: 'data-href',
+    //                 sectionSelector: '.help-content',
+    //                 initialButtonSelectorNoActive: '', //якщо треба зробити щось активним тоді додати туди селектор
+    //                 initialSectionId: 'aboutUs',
+    //                 readmoreClass: 'readmore',
+    //                 moreClass: 'description-more',
+    //                 activeClass: 'readmore-active',
+    //                 visibleClass: 'visible'
+    //             }
+    //         ]
+
+    //         sections.forEach(({
+    //             buttonSelector,
+    //             targetAttr,
+    //             sectionSelector,
+    //             initialButtonSelector,
+    //             initialSectionId,
+    //             readmoreClass,
+    //             moreClass,
+    //             activeClass,
+    //             visibleClass
+    //         }) => {
+    //             document.querySelectorAll(buttonSelector).forEach(button => {
+    //                 let targetId = button.getAttribute(targetAttr)
+    //                 let targetSection = document.getElementById(targetId)
+    //                 if (targetSection) {
+    //                     button.insertAdjacentElement('afterend', targetSection)
+    //                 }
+    //             })
+
+    //             document.querySelectorAll(`${buttonSelector}[${targetAttr}]`).forEach(button => {
+    //                 button.classList.add(readmoreClass)
+    //             })
+
+    //             document.querySelectorAll(sectionSelector).forEach(section => {
+    //                 section.classList.add(moreClass)
+    //             })
+
+    //             const initialButton = document.querySelector(initialButtonSelector),
+    //                 initialSection = document.getElementById(initialSectionId)
+
+    //             if (initialButton && initialSection) {
+    //                 initialButton.classList.add(activeClass)
+    //                 initialSection.classList.add(visibleClass)
+    //             }
+    //         })
+    //     }
+    // }
+
+    // function handleHashChange() {
+    //     if (window.innerWidth < 1024) {
+    //         const hash = window.location.hash.substring(1) // Remove the '#' from the hash
+    //         if (hash) {
+    //             document.querySelectorAll('.help-content').forEach(section => {
+    //                 section.classList.remove('visible')
+    //                 console.log(section)
+    //             })
+
+    //             document.querySelectorAll('.menu-help-item a').forEach(button => {
+    //                 button.classList.remove('readmore-active')
+    //             })
+
+    //             const targetLink = document.querySelector(`.menu-help-item a[data-href="${hash}"]`)
+    //             const targetSection = document.getElementById(hash)
+
+    //             if (targetLink && targetSection) {
+    //                 targetLink.classList.add('readmore-active')
+    //                 targetSection.classList.add('visible')
+    //             }
+    //         }
+    //     }
+    // }
+
+    // document.querySelectorAll('.help-sub-menu a').forEach(link => {
+    //     link.addEventListener('click', function () {
+    //         setTimeout(handleHashChange, 0)
+    //     })
+    // })
+
+    // rearrangeSections()
+    // handleHashChange()
+    // window.addEventListener('hashchange', handleHashChange)
+    // page with help information - navigation
+    if (document.querySelector(".menu-help-item ")) {
+        const ctaHelp = document.querySelectorAll(".menu-help-item a")
+
+        ctaHelp.forEach(helpItem => {
+            helpItem.addEventListener("mouseenter", function () {
+                helpItem.classList.add("hover-cta-help")
+            })
+            helpItem.addEventListener("mouseleave", function () {
+                helpItem.classList.remove("hover-cta-help")
+            })
+        })
 
 
+    }
+    if (document.querySelector('.help-content')) {
+        const menuItems = document.querySelectorAll('.menu-help-item a'),
+            contentSections = document.querySelectorAll('.help-content')
+
+        function activateSection(target) {
+            menuItems.forEach(i => i.classList.remove('active-cta-help'))
+
+            const activeItem = Array.from(menuItems).find(i => i.getAttribute('data-href') === target)
+            if (activeItem) {
+                activeItem.classList.add('active-cta-help')
+            }
+
+            contentSections.forEach(section => {
+                section.style.display = 'none'
+                section.classList.remove('active-help')
+            })
+
+            const targetSection = document.getElementById(target)
+            if (targetSection) {
+                targetSection.style.display = 'block'
+                targetSection.classList.add('active-help')
+            }
+        }
+
+        if (menuItems.length > 0) {
+            menuItems.forEach(item => {
+                item.addEventListener('click', function (event) {
+                    event.preventDefault()
+                    const target = this.getAttribute('data-href')
+                    activateSection(target)
+                    history.pushState(null, '', `#${target}`)
+                })
+            })
+
+            const hash = window.location.hash.substring(1)
+            if (hash) {
+                activateSection(hash)
+            } else {
+                const initialSection = document.getElementById(menuItems[0].getAttribute('data-href'))
+                if (initialSection) {
+                    initialSection.style.display = 'block'
+                    initialSection.classList.add('active-help')
+                }
+            }
+
+            window.addEventListener('hashchange', function () {
+                const newHash = window.location.hash.substring(1)
+                activateSection(newHash)
+            })
+        }
+
+    }
 })

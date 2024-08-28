@@ -23,7 +23,12 @@ body
     color: #121212
 body, button
     font-family: 'Mariupol'
-h1
+
+.wrapper
+    max-width: 90%
+    margin: 0 auto
+
+.page-h1
     padding-bottom: 40px
     font-size: 18px
     font-weight: 500
@@ -32,9 +37,6 @@ h1
     text-transform: uppercase
     +media(1024)
         font-size: 48rem
-.wrapper
-    max-width: 90%
-    margin: 0 auto
 input, textarea
     width: 100%
     box-sizing: border-box
@@ -607,6 +609,7 @@ div.page-contact,
         font-weight: 400
 @import components/popup-reg
 @import components/comment
+@import components/help
 @import components/privacy
 @import components/catalog-product-card
 @import components/basket
