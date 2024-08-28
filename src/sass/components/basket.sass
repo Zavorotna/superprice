@@ -1,39 +1,50 @@
-.head-basket
-    h1
-        margin-bottom: 25rem
-        font-size: 24rem
-        font-weight: 600
-
 .bascket-card
     position: relative
     width: 100%
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 2fr 4fr
     margin-bottom: 10rem
     padding: 20rem
     gap: 20rem
-    border: 1rem solid #D9D9D9
+    border-radius: 15px
+    border: 1px solid #ECECEC
     background: #FFF
     box-shadow: 0rem 5rem 10rem 0rem rgba(18, 18, 18, 0.05)
     +media(1024)
-        grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr
+        grid-template-columns: 1.5fr 1.5fr 1fr 1fr
 .img-cart
-
+    max-width: 100px
     img
+        border-radius: 5px
         width: 100%
-        object-fit: contain
-.basket-cta
+        max-height: 120px
+        object-fit: cover
+        +media(1024)
+            width: 160px
+            max-height: 200px
+a.basket-cta
     display: block
+    padding: 12px 0
     width: 100%
+    color: #121212
+    font-size: 18rem
+    font-weight: 400
+    text-align: center
+    letter-spacing: 0.9px
+    text-transform: uppercase
+    border-radius: 20px
+    border: 1px solid #E37523
+    +media(1024)
+        padding: 19px 0
 .basket-grid
     grid-template-columns: 1fr
     +media(1024)
-        grid-template-columns: 60vw 20vw
+        grid-template-columns: 60vw 25vw
         column-gap: 50rem
 .delete-cart-product
     position: absolute
-    top: 0
-    right: 0
+    top: 10px
+    right: 10px
     padding: 10rem
     column-gap: 10rem
     border: none
@@ -42,58 +53,79 @@
     font-weight: 300
     svg
         display: block
-        width: 10px
-        height: 10px
-        +media(1024)
-            width: 6px
-            height: 6px
     span
         display: none
         +media(1024)
             display: block
-
 .head-cart
-    padding-bottom: 20rem
-    font-size: 18rem
+    font-size: 14px
     font-weight: 500
     +media(1024)
-        padding-bottom: 34rem
+        font-size: 20rem
+        padding-bottom: 10px
 
 .text-cart
     column-gap: 10rem
-    padding-bottom: 10rem
-    color: #9E9E9E
-    font-size: 16rem
+    padding-bottom: 15px
+    font-size: 12px
     font-weight: 400
-
+    +media(1024)
+        font-size: 18px
+.article-cart
+    padding-bottom: 30px
+    color: #999
+    font-size: 12px
+    font-weight: 400
+    +media(1024)
+        font-size: 18px
+.flex-size-color
+    column-gap: 10px
+    +media(1024)
+        align-items: flex-start
+        flex-direction: column
 .color-cart
+    position: relative
     display: inline-block
-    width: 14px
-    height: 14px
+    width: 10px
+    height: 10px
     border-radius: 50%
-    // background-color: #000
-
-.count-cart
-    p
-        column-gap: 5rem
-    a
-        position: relative
-        width: 13px
-        height: 13px
-        transition: all .5s ease
-        svg
-            position: absolute
-            top: 50%
-            left: 50%
-            transform: translate(-50%, -50%)
-        &:hover
-            background-color: #D9D9D9
+    box-sizing: border-box
+    +media(1024)
+        width: 14px
+        height: 14px
+    &::before
+        content: ""
+        width: 15px
+        height: 15px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        border: 1px solid #999
+        border-radius: 50%
+        box-sizing: border-box
+        +media(1024)
+            width: 19px
+            height: 19px
+.size-cart
+    font-size: 14px
+    +media(1024)
+        width: 30px
+        height: 30px
+        font-size: 16px
+        padding: 5px 9px
+        border: 1px solid #E37523
+        border-radius: 8px
+.count-container
+    span
+        overflow: hidden
     input
         width: 100%
         text-align: center
         border: none
         outline: none
-        width: 30rem
+        +media(1024)
+            width: 30px
     input[type="number"]::-webkit-outer-spin-button,
     input[type="number"]::-webkit-inner-spin-button
         -webkit-appearance: none
@@ -104,53 +136,66 @@
     input[type="number"]:focus
         appearance: textfield
         -moz-appearance: textfield
-
+.price-abs
+    position: absolute
+    bottom: 0
+    +media(1024)
+        position: static
 .price-cart-text
     display: inline-block
     padding-left: 10rem
     color: #121212
-    font-size: 16rem
-    font-weight: 700
-    text-transform: uppercase
+    font-size: 20rem
+    font-weight: 500
 .desctop-price
     display: none
-    +media(1024) 
+    +media(1024)
         display: block
-.mobile-price
-    +media(1024)
-        display: none
+
 .form-basket
+    padding-top: 50px
     +media(1024)
-        max-width: 250rem !important
+        max-width: 365px !important
     button, a
         margin-bottom: 10rem
-        // min-height: 70rem
-    .cta-more
-        min-height: 70rem
-    
-.basket-readmore
-    margin-bottom: 10rem
-    padding: 15rem 10rem
-    font-size: 14rem
-    background-color: #fff
-    border: 1rem solid #D9D9D9
-    text-transform: none
+        cursor: pointer
+    .form-to-add_comment
+
+        > div
+            column-gap: 10px
+            align-items: flex-end
+            p
+                width: 100%
+        label
+            display: inline-block
+            padding-bottom: 10rem
+            font-size: 16px
+            font-weight: 500
+.flex-btn
+    flex-direction: column
+    justify-content: center
 .basket-descr
     position: relative
     top: -15rem
     input
         width: 100%
         border: 1rem solid #D9D9D9
-.sum-cart 
-    text-align: right
-    +media(1024)
-        text-align: left
 .sum-basket
-    padding: 16rem 0 30rem
+    padding-bottom: 20px
     .text-sum
         text-transform: none
-        font-size: 18rem
+        font-size: 20rem
         font-weight: 500
     .sum
-        font-size: 20rem
+        font-size: 24rem
         font-weight: 700
+input.promo-basket
+    appearance: none
+    width: 40px
+    height: 40px
+    transition: all .5s ease
+    background: url(../img/no-check.svg) no-repeat center/cover
+    &:checked
+        background: url(../img/check.svg) no-repeat center/cover
+    &:hover
+        background: url(../img/check.svg) no-repeat center/cover

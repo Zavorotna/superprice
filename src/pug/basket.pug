@@ -26,47 +26,38 @@ html(lang="uk")
                 a(href="index.html") головна
                 span /
                 span.selected-page кошик
+            h1 кошик
             .grid.basket-grid
                 .basket-main 
-                    .head-basket.flex-between.item-center
-                        h1 кошик
-                        p.text-cart 4 товари
                     - for(let i = 0; i < 4; i++)
                         include components/basket-card
-                .form-comment.form-basket 
+                .form-comment.form-basket
                     form(action="#")
-                        p.head-comment-form ваше замовлення
+                        h2.head-comment-form ваше замовлення
                         .form-to-add_comment
-                            .readmore.basket-readmore
-                                span Промокод
-                            p.description-more.basket-descr
-                                input#promo(type="text" name="promo" placeholder="Введіть промокод")
-                            .readmore.basket-readmore
-                                span Застосувати сертифікат
-                            p.description-more.basket-descr
-                                input#sertyficat(type="text" name="sertyficat" placeholder="Введіть сертифікат") 
+                            .flex-between
+                                p
+                                    label(for="promo") Промокод 
+                                    input#promo(type="text" name="promo")
+                                input(type="radio").promo-basket
+                            .flex-between
+                                p
+                                    label(for="sertyficat") Сертифікат на знижку
+                                    input#sertyficat(type="text" name="sertyficat") 
+                                input(type="radio").promo-basket
                         .sum-basket.flex-between.item-center
-                            p.text-sum Разом:
-                            p.sum 3200₴
+                            p.text-sum Знижка
+                            p.sum 0 грн
+                        .sum-basket.flex-between.item-center
+                            p.text-sum До сплати
+                            p.sum 890 грн
                         //- a(href="order.html").btn-card.yellow-cta оформити замовлення
-                        button(type="submit").btn-card.yellow-cta.basket-cta оформити замовлення
-                        a(href="#").transparent-cta.basket-cta назад у каталог
-            .top-prodaz-main
-                section.view-product 
-                    h2 доповніть свій образ
-                    .top-prodaz-card
-                        - for(let i = 0; i < 4; i++) 
-                            //- include components/catalog-card
-                .view-all
-                    .flex-between 
-                        a(href="#").left-arrow.gray-sircle 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M23 13L15 20.5L23 28" stroke="#121212" stroke-linecap="round"/>
-                            </svg>
-                        a(href="#").right-arrow.gray-sircle 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M17 13L25 20.5L17 28" stroke="#121212" stroke-linecap="round"/>
-                            </svg>
+                        .d-flex.flex-btn
+                            button(type="submit").btn-card.cta.cta-card.d-flex.item-center оформити замовлення
+                            a(href="#").basket-cta назад до каталогу
+            section.view-product.top-prodaz-main
+                h2 вам може сподобатись
+                include components/card-sliderPageBasket
 
         footer#footer
             include components/footer

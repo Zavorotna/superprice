@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
         label.style.borderColor = color === 'white' ? '#D9D9D9' : 'white'
     })
 
+    //color to cart product
+    const colorCart = document.querySelectorAll('.color-cart')
+    colorCart.forEach(colorCart => {
+        let color = colorCart.getAttribute("data-color")
+        colorCart.style.backgroundColor = color
+        colorCart.style.border = "1px solid"
+        colorCart.style.borderColor = color === 'white' ? '#D9D9D9' : 'transparent'
+    })
+
     const blackFon = document.querySelector(".black-fon")
     //down menu mobile and decstop
     if (document.querySelector('.down-menu')) {
@@ -872,6 +881,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         cardSlider.init()
     }
+    if (document.querySelector(".basket-slider")) {
+        const cartSlider = new InfinitySlider(".basket-slider", {
+            isArrows: true,
+            isDots: false,
+            isSlidesToScrollAll: false,
+            baseCardWidth: baseCardSliderWidth,
+            gap: 20,
+            isAutoplay: false,
+            autoplaySpeed: 3000,
+            transitionCard: "all 1.5s ease",
+        })
+
+        window.onresize = function () {
+            cartSlider.init()
+        }
+        cartSlider.init()
+    }
 
 
     const buttons = document.querySelectorAll('.toggle-section')
@@ -1327,4 +1353,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     }
+    if(document.querySelectorAll(".count-container") && window.innerWidth < 1024) {
+        const countBlock = document.querySelectorAll(".count-container"),
+            parentDescr = document.querySelectorAll(".description-cart")
+    
+            countBlock.forEach((item, index )=> {
+                parentDescr[index].appendChild(item)
+            })
+    }
+
+
 })

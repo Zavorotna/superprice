@@ -59,11 +59,15 @@
 .plus
     position: relative
     display: inline-block
-    width: 30px
-    height: 30px
+    width: 20px
+    height: 20px
     border: 1px solid #E37523
+    border-radius: 6px
     font-weight: 400
-    border-radius: 8px
+    +media(1024)
+        width: 30px
+        height: 30px
+        border-radius: 8px
     span
         position: absolute
         top: 50%
@@ -237,8 +241,9 @@
     column-gap: 10px
     justify-content: center
     width: 100%
-    max-width: 365rem
     border-radius: 20rem
+    +media(1024)
+        max-width: 365rem
 .haracteristic-btn
     column-gap: 10rem
     grid-template-columns: repeat(4, 1fr)
