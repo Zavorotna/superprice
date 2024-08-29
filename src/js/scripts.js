@@ -898,6 +898,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         cartSlider.init()
     }
+    if (document.querySelector(".cabinet-slider")) {
+        const cartCabinetSlider = new InfinitySlider(".cabinet-slider", {
+            isArrows: true,
+            isDots: false,
+            isSlidesToScrollAll: false,
+            baseCardWidth: baseCardSliderWidth,
+            gap: 20,
+            isAutoplay: false,
+            autoplaySpeed: 3000,
+            transitionCard: "all 1.5s ease",
+        })
+        cartCabinetSlider.init()
+        window.onresize = function () {
+            cartCabinetSlider.init()
+        }
+    }
 
 
     const buttons = document.querySelectorAll('.toggle-section')

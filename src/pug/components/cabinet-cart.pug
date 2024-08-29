@@ -1,0 +1,32 @@
+h2.page-h2 кошик
+.grid.basket-grid
+    .basket-main 
+        - for(let i = 0; i < 4; i++)
+            include basket-card
+    .form-comment.form-basket
+        form(action="#")
+            h3.head-comment-form ваше замовлення
+            .form-to-add_comment
+                .flex-between
+                    p
+                        label(for="promo") Промокод 
+                        input#promo(type="text" name="promo")
+                    input(type="radio").promo-basket
+                .flex-between
+                    p
+                        label(for="sertyficat") Сертифікат на знижку
+                        input#sertyficat(type="text" name="sertyficat") 
+                    input(type="radio").promo-basket
+            .sum-basket.flex-between.item-center
+                p.text-sum Знижка
+                p.sum 0 грн
+            .sum-basket.flex-between.item-center
+                p.text-sum До сплати
+                p.sum 890 грн
+            //- a(href="order.html").btn-card.yellow-cta оформити замовлення
+            .d-flex.flex-btn
+                button(type="submit").btn-card.cta.cta-card.d-flex.item-center оформити замовлення
+                a(href="#").basket-cta назад до каталогу
+section.view-product.top-prodaz-main
+    h2 вам може сподобатись
+    include card-sliderCabinetBasket
